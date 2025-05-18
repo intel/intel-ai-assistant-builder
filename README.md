@@ -65,6 +65,10 @@ These assistants streamline everyday tasks and deliver intelligent solutions by 
 
 ### Getting started 
 ***
+
+> [!WARNING]
+> Currently, Intel® AI Assistant Builder only supports **one Assistant installation at a time** on your AI PC. Users are advised to fully remove the existing Assistant before installing other ones.
+
 - #### Download the software
 1. Open your web browser and go to [https://aibuilder.intel.com](https://aibuilder.intel.com/)
 2. Click on one of the available AI Assistants to start the download. For general use, we recommend the “Sales Assistant”. The assistant’s capability (and appearance) can be customized after installation.
