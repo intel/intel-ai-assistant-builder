@@ -1,26 +1,33 @@
 ![A pile of legos with white text AI-generated content may be incorrect.](media/917896de1185740322e7ad5f45d79c15.jpeg)
 
-<h1 align="center">Intel® AI Assistant Builder <br> SuperBuilder</h1>
+<h1 align="center">Intel® AI Assistant Builder <br> SuperBuilder <br> <a href="https://aibuilder.intel.com">https://aibuilder.intel.com</a></h1>
 
 <p align="justify"><strong>Intel® AI Assistant Builder</strong>—also known as <strong>SuperBuilder</strong>—is Intel’s Gen-AI reference design platform that enables the rapid creation of custom AI assistants and agents tailored to specific industry needs and proprietary data.
 These assistants streamline everyday tasks and deliver intelligent solutions by leveraging your internal knowledge bases—<strong>all while running entirely locally</strong> on Intel®-based AI PCs. Your data and workflows remain private and secure, powered by cutting-edge large language models (LLMs), customizable agentic workflows, and performance-optimized processing.</p>
 
-- **[Key Benefits](#key-benefits)**
-- **[Prerequisites](#prerequisites)**
+- [Key Benefits](#key-benefits)
+- [Prerequisites](#prerequisites)
   - [Hardware requirements](#hardware-requirements)
   - [Software requirements](#software-requirements)
-- **[Getting started](#getting-started)**
-  - [Download the software](#download-the-software)
-  - [Using SuperBuilder](#using-superbuilder)
-- **[What's included](#whats-included)**
+- [Getting started](#getting-started)
+- [What's included](#whats-included)
   - [Sample code](#sample-code)
   - [SuperBuilder Service API Guide](#superbuilder-service-api-guide)
-- **[LLM Model List](#llm-model-list)**
-- **[Features](#features)**
-- **[Tips, Troubleshooting, Known Issues](#tips-troubleshooting-known-issues)**
-- **[Contact](#contact)**
+- [LLM Model List](#llm-model-list)
+- [Features](#features)
+- [Tips, Troubleshooting, Known Issues](#tips-troubleshooting-known-issues)
+- [Release Notes](#release-notes)
+  - [Version 1.2](#version-12)
+  - [Previous Release Notes](#previous-release-notes)
+    - [Version 1.1](#version-11)
+    - [Version 1.0](#version-10)
+- [Release Notes](#release-notes-1)
+  - [Version 1.2](#version-12-1)
+  - [Previous Release Notes](#previous-release-notes-1)
+    - [Version 1.1](#version-11-1)
+    - [Version 1.0](#version-10-1)
+- [Contact](#contact)
 
-**:star: _"Star" us to receive latest updates!_**
 
 <br>
 
@@ -45,7 +52,7 @@ These assistants streamline everyday tasks and deliver intelligent solutions by 
 ***
 <p align="justify">The download, installation, and initial setup of the application require an internet connection. Once the initial setup is complete, no connection is needed unless you choose to change the model used by the assistant, in which case additional file downloads may be required.</p>
 
-- #### Hardware requirements
+#### Hardware requirements
   | **Component** | **Minimum Requirements**                                     | **Recommended Requirements**                |
   |---------------|--------------------------------------------------------------|---------------------------------------------|
   | Processor     | Intel® Core™ Ultra processor Series 1 (Meteor Lake)          | Intel® Core™ Ultra 200V series (Lunar Lake) |
@@ -57,7 +64,7 @@ These assistants streamline everyday tasks and deliver intelligent solutions by 
 >  * Intel® AI Assistant Builder has been validated on limited Intel AIPC: MTL, LNL, and ARL systems.
 > * Minimum Intel Graphics driver version is **30.0.100.9955**. and minimum NPU driver version is **32.0.100.3714**. 
 
-- #### Software requirements
+#### Software requirements
   Intel® AI Assistant Builder has been validated for use on **Microsoft Windows 11 version 23H2 or newer**. During the installation process, Intel® AI Assistant Builder application may download and install required components.
 
 > [!TIP]
@@ -83,12 +90,12 @@ These assistants streamline everyday tasks and deliver intelligent solutions by 
 
 ### What's included
 ***
-- #### Sample code
+#### Sample code
   This folder contains a sample application created using SuperBuilder API service. We included sample projects build from `dotnet` , `Python` and `Go`. 
 
   [Sample Code](example/README.md)
 
-- #### [SuperBuilder Service API Guide](https://intel.github.io/intel-ai-assistant-builder/)
+#### [SuperBuilder Service API Guide](https://intel.github.io/intel-ai-assistant-builder/)
   This folder contains API service documentation. SuperBuilder API service's main entry point is the [AssistantService](https://intel.github.io/intel-ai-assistant-builder/html/127056c5-b74d-e4f7-a324-5e4aa7c09935.htm) class. You can also access the API document from this link: [API Documentation](https://intel.github.io/intel-ai-assistant-builder/)
   
    ![Assistant Service](media/api_service_border.png)
@@ -188,6 +195,116 @@ Some models on Hugging Face require user consent before they can be downloaded. 
 >* **Conversation History - Reset to Defaults Issue**: Although the `Reset to Defaults` button sets the `Conversation History` to 0, the conversation history is still utilized in the context. To resolve this issue, please manually adjust the value using the slider.
 >* **Intermittent Qwen2 and Qwen2.5 Models Issue**: The Qwen2 and Qwen2.5 models have a known intermittent issue where they occasionally generate unwanted responses with exclamation marks. This behavior is not consistently reproducible, but retrying the query typically resolves the problem.
 <br>
+
+### Release Notes
+
+#### Version 1.2
+
+- New Models Support
+Intel(R) AI Assistant Builder now officially supports Qwen2.5-7B, Phi4-mini, and Deepseek-R1-Distilled-Qwen-7B.
+
+- ModelScope Download Endpoint Support 
+Intel(R) AI Assistant Builder now supports direct model downloads from ModelScope.cn, improving accessibility and convenience.
+
+- Localization Support
+Partial localization is available for Simplified Chinese (zh-Hans) and Traditional Chinese (zh-Hant). Language settings are automatically adjusted based on your Windows system language, but users can also manually select their preferred language in the Intel(R) AI Assistant Builder settings.
+
+- Admin Mode Feature Enable
+Intel(R) AI Assistant Builder now offers both a simple chatbot interface for end users and an admin interface with comprehensive configuration options. This enables administrators to configure, preview, and evaluate the end-user experience.
+
+#### Previous Release Notes
+
+##### Version 1.1
+
+- HF-Mirror for Users in PRC
+The HF-Mirror provides users in the People's Republic of China with faster, more reliable access to models.
+
+- Model Conversion to OpenVINO Format
+The model conversion utility enables the conversion of most 'Text Generation' models to the OpenVINO format for immediate use in the assistant or wherever you plan to use a given model. You can convert models directly from Hugging Face or from a local folder. Optimized performance, compatibility, and efficiency of model execution are just a few benefits of this new utility. Please note that the model conversion utility does not work with all models, and it is important to verify the accuracy of any converted model.
+
+- Import and Export Assistant
+The new "Import and Export Assistant" feature simplifies the process of transferring data and configurations between computers and when conducting upgrades or re-installations. The option to export a "Built" assistant and allow another user to import it facilitates collaboration and sharing.
+
+- New HR Special Query called Resume Match
+The new HR assistant feature allows unlimited resume uploads in one session, intelligently scores resumes against job descriptions, extracts key details from top candidates using RAG, and facilitates continuous conversational analysis of documents.
+
+- Update to Query Tabular Data
+The Query Tabular Data feature now shows the SQL query used to generate the response, allowing users to verify, correct if necessary, and rerun the adjusted query.
+
+- New Collect Metrics Parameter
+The new Collect Metrics parameter, when enabled by the user, gathers performance metrics related to file ingestion and response generation, providing valuable insights.
+
+##### Version 1.0
+
+- User Interface
+  - UX customization: Users can upload their own logo and customize additional app colors.
+  - Users can upload their own LLM or RAG models. Instructions are provided to convert models to a compatible format. Intel does not guarantee that all models will work.
+
+- AI Features
+  - Query Summary: Users can attach up to three files (PDF, DOCX, TXT) and generate a summary of each file, allowing them to ask follow-up questions based on the summary.
+  - Query Tabular Data: Users can attach one file (XLSX, CSV). The data must be in tabular format, with headers in the first row and data in subsequent rows. This feature generates a description of the tabular data in each worksheet.
+  - Query Images: Users can attach up to three files (PNG, JPEG, JPG) and generate a description of each image. This requires a vision model such as Phi-3.5-vision-instruct-int4-ov.
+
+- NPU Model
+  - NPU model support for Phi3-4K now offers an improved token length of 2K.
+
+- New Assistant
+  - Added Finance Assistant.
+
+### Release Notes
+
+#### Version 1.2
+
+- New Models Support
+Intel(R) AI Assistant Builder now officially supports Qwen2.5-7B, Phi4-mini, and Deepseek-R1-Distilled-Qwen-7B.
+
+- ModelScope Download Endpoint Support 
+Intel(R) AI Assistant Builder now supports direct model downloads from ModelScope.cn, improving accessibility and convenience.
+
+- Localization Support
+Partial localization is available for Simplified Chinese (zh-Hans) and Traditional Chinese (zh-Hant). Language settings are automatically adjusted based on your Windows system language, but users can also manually select their preferred language in the Intel(R) AI Assistant Builder settings.
+
+- Admin Mode Feature Enable
+Intel(R) AI Assistant Builder now offers both a simple chatbot interface for end users and an admin interface with comprehensive configuration options. This enables administrators to configure, preview, and evaluate the end-user experience.
+
+#### Previous Release Notes
+
+##### Version 1.1
+
+- HF-Mirror for Users in PRC
+The HF-Mirror provides users in the People's Republic of China with faster, more reliable access to models.
+
+- Model Conversion to OpenVINO Format
+The model conversion utility enables the conversion of most 'Text Generation' models to the OpenVINO format for immediate use in the assistant or wherever you plan to use a given model. You can convert models directly from Hugging Face or from a local folder. Optimized performance, compatibility, and efficiency of model execution are just a few benefits of this new utility. Please note that the model conversion utility does not work with all models, and it is important to verify the accuracy of any converted model.
+
+- Import and Export Assistant
+The new "Import and Export Assistant" feature simplifies the process of transferring data and configurations between computers and when conducting upgrades or re-installations. The option to export a "Built" assistant and allow another user to import it facilitates collaboration and sharing.
+
+- New HR Special Query called Resume Match
+The new HR assistant feature allows unlimited resume uploads in one session, intelligently scores resumes against job descriptions, extracts key details from top candidates using RAG, and facilitates continuous conversational analysis of documents.
+
+- Update to Query Tabular Data
+The Query Tabular Data feature now shows the SQL query used to generate the response, allowing users to verify, correct if necessary, and rerun the adjusted query.
+
+- New Collect Metrics Parameter
+The new Collect Metrics parameter, when enabled by the user, gathers performance metrics related to file ingestion and response generation, providing valuable insights.
+
+##### Version 1.0
+
+- User Interface
+  - UX customization: Users can upload their own logo and customize additional app colors.
+  - Users can upload their own LLM or RAG models. Instructions are provided to convert models to a compatible format. Intel does not guarantee that all models will work.
+
+- AI Features
+  - Query Summary: Users can attach up to three files (PDF, DOCX, TXT) and generate a summary of each file, allowing them to ask follow-up questions based on the summary.
+  - Query Tabular Data: Users can attach one file (XLSX, CSV). The data must be in tabular format, with headers in the first row and data in subsequent rows. This feature generates a description of the tabular data in each worksheet.
+  - Query Images: Users can attach up to three files (PNG, JPEG, JPG) and generate a description of each image. This requires a vision model such as Phi-3.5-vision-instruct-int4-ov.
+
+- NPU Model
+  - NPU model support for Phi3-4K now offers an improved token length of 2K.
+
+- New Assistant
+  - Added Finance Assistant.
 
 ### Contact
 ***
