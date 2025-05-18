@@ -1,24 +1,27 @@
-### Special Query Types
+# Special Query Types
 
-Special queries are used to “focus” the assistant on specific documents. This can yield better, more accurate results and help the assistant answer more sophisticated questions based on the context of the specified document(s). To use the special queries click the attach file icon (the paperclip icon next to the question entry field).
-
-![](media/24e3d8d9071449014e01ac1399c93b9c.png)
-
-*\*PRO TIP:* Using small files which only contain information relevant to the topic at hand will yield the best results.
-
-To close “Special query mode” click the “Clear” icon from the list of special queries. Starting a new chat session will also exit special query mode.
-
-![A screenshot of a chatbot AI-generated content may be incorrect.](media/1c963aec81be29b3d949e5f6231af2fe.png)
+Special queries are used to `focus` the assistant on specific documents. This can yield better, more accurate results and help the assistant answer more sophisticated questions based on the context of the specified document(s). To use the special queries click the attach file icon (the paperclip icon next to the question entry field).
 
 
-#### HR Resume Match
 
-The resume match feature available in the "HR Assistant"; intelligently scores resumes against job descriptions, extracts key details from top candidates using RAG, and facilitates continuous conversational analysis of resume documents. To use the resume match feature:
-1. Open the "Special Queries" list and choose "Resume Match". 
-![resume match](media/resume_match1.png)
+**PRO TIP:** Using small files which only contain information relevant to the topic at hand will yield the best results.
 
-2. Attach the resume(s) of the candidates being considered for a given job (pdf, docx, txt)   
-3. Provide the assistant with the job description you wish to measure the respective candidates against. This can be a short list of requirements or a detailed list of requirements similar to what might be found on a job board.
-4. Start the evaluation. 
-5. The assistant will rank the list of candidates and provide notes for the top four candidates, describing the reasons they were ranked highly. 
-![resume match](media/resume_match2.png)
+To close `Special query mode` click the `Clear` icon from the list of special queries. Starting a new chat session will also exit special query mode.
+
+![image](https://github.com/user-attachments/assets/87fa56d3-8abe-476d-97ac-62e030b1a6c7)
+
+
+### Query Tabular Data
+This feature is meant for analysing and querying tabular files (XLSX, CSV). 
+
+**NOTE:** Before using this feature, ensure that the data is structured as a relational SQL table. The first row should contain the column headers, with each following row representing corresponding data entries. Avoid duplicate column names within any worksheet. For XLSX files with multiple worksheets, each worksheet will be treated as a separate table.
+
+![image](https://github.com/user-attachments/assets/4e0c702b-47b7-4bcc-ad8f-2f87d4df3af2)
+
+### Resume Match
+This feature provides HR professionals with a powerful tool to quickly identify the most qualified candidates from large applicant pools, while maintaining the ability to dive deeper into specific candidate qualifications through natural conversation. It intelligently scores resumes against job descriptions, extracts key details from top candidates using RAG, and facilitates continuous conversational analysis of resume documents. The system is designed to deliver all relevant information in a streamlined, concise, and efficient way.
+
+**Note:** It utilizes an in-house proprietary document scoring algorithm capable of leveraging an LLM to evaluate an unlimited number of documents against specific criteria. This algorithm is customizable and can be applied to a wide range of document scoring use cases. For optimal results, use the Qwen2.5 or Qwen2 models.
+
+![image](https://github.com/user-attachments/assets/5b83c4dc-8f02-4a7a-90c7-c8be4b673bee)
+
