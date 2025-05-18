@@ -192,7 +192,7 @@ Some models on Hugging Face require user consent before they can be downloaded. 
 <br>
 
 ### Release Notes
-
+***
 #### Version 1.2
 
 - New Models Support
