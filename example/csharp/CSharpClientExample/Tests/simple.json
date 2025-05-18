@@ -1,0 +1,33 @@
+{
+  "TestName": "Simple Test",
+  "MetricOutputFilePath": "simple_metrics.csv",
+  "ModelList": [
+    "local_models\\Phi-3-mini-4k-instruct-int4-ov",
+    "local_models\\Meta-Llama-3-8B-Instruct-hf-sym_int4",
+    "local_models\\zephyr-7b-beta-int4-ov",
+    "local_models\\vicuna-7b-v1.5-hf-sym_int4",
+    "local_models\\Mistral-7B-Instruct-v0.2-int4-ov"
+  ],
+  "TestSteps": [
+    {
+      "Type": "Chat",
+      "Content": "Hello, what is your name?"
+    },
+    {
+      "Type": "AddFiles",
+      "Files": [ "path/to/file.pdf", "path/to/file.pdf" ]
+    },
+    {
+      "Type": "RemoveFiles",
+      "Files": [ "path/to/file.pdf", "path/to/file.pdf" ]
+    },
+    {
+      "Type": "SayHello",
+      "Content": "SuperBuilder C# Client!"
+    },
+    {
+      "Type": "CheckHealth",
+      "Content": "RAG"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "TestName": "Sales Use Case",
+  "MetricOutputFilePath": "sa_metrics.csv",
+  "ModelList": [
+    "local_models\\Phi-3-mini-4k-instruct-int4-ov",
+    "local_models\\Meta-Llama-3-8B-Instruct-hf-sym_int4",
+    "local_models\\zephyr-7b-beta-int4-ov",
+    "local_models\\vicuna-7b-v1.5-hf-sym_int4",
+    "local_models\\Mistral-7B-Instruct-v0.2-int4-ov"
+  ],
+  "TestSteps": [
+    {
+      "Type": "AddFiles",
+      "Files": [ "rag_docs\\Intel Core Ultra Processors Press Deck_FINAL_Newsroom_12.14 1.pdf" ]
+    },
+    {
+      "Type": "Chat",
+      "Content": "Is the Intel 4 Process used for Intel Core Ultra Processors?"
+    },
+    {
+      "Type": "Chat",
+      "Content": "What version of Thunderbolt is supported on Intel Core Ultra Processors?"
+    },
+    {
+      "Type": "Chat",
+      "Content": "What is the maximum DDR5-5600 RAM supported on Intel Core Ultra Processors?"
+    },
+    {
+      "Type": "Chat",
+      "Content": "What Wi-Fi versions are supported on Intel Core Ultra Processors?"
+    },
+    {
+      "Type": "Chat",
+      "Content": "What are the three AI engines built into Intel Core Ultra Processors?"
+    },
+    {
+      "Type": "Chat",
+      "Content": "Is the GPU built-in or discrete?"
+    }
+  ]
+}

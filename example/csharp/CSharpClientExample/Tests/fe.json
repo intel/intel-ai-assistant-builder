@@ -1,0 +1,45 @@
+{
+  "TestName": "Field Engineering Use Case",
+  "MetricOutputFilePath": "fe_metrics.csv",
+  "ModelList": [
+    "local_models\\Phi-3-mini-4k-instruct-int4-ov",
+    "local_models\\Meta-Llama-3-8B-Instruct-hf-sym_int4",
+    "local_models\\zephyr-7b-beta-int4-ov",
+    "local_models\\vicuna-7b-v1.5-hf-sym_int4",
+    "local_models\\Mistral-7B-Instruct-v0.2-int4-ov"
+  ],
+  "TestSteps": [
+    {
+      "Type": "AddFiles",
+      "Files": [ "rag_docs\\640982_MTL_UH_PDG_Rev2p0 7.pdf", "rag_docs\\325462-sdm-vol-1-2abcd-3abcd-4.pdf", "rag_docs\\core-ultra-processors-product-brief.pdf" ]
+    },
+    {
+      "Type": "Chat",
+      "Content": "What is the speed of DDR5 SODIMM 1DPC?"
+    },
+    {
+      "Type": "Chat",
+      "Content": "What's the length matching rule between CLK and DQS?"
+    },
+    {
+      "Type": "Chat",
+      "Content": "Does the Intel i7-2600K Processor support Turbo Boost?"
+    },
+    {
+      "Type": "Chat",
+      "Content": "What are the general purpose registers?"
+    },
+    {
+      "Type": "Chat",
+      "Content": "How many SKUs does the Intel Core Ultra U-series have?"
+    },
+    {
+      "Type": "Chat",
+      "Content": "How many concurrent 4K60 HDR displays does Intel Core Ultra support?"
+    },
+    {
+      "Type": "Chat",
+      "Content": "Could you please list the software and OS support of Intel Core Ultra?"
+    }
+  ]
+}
