@@ -191,7 +191,10 @@ Some models on Hugging Face require user consent before they can be downloaded. 
 >* **Query Tabular Data Issue**: Query Tabular Data will fail to process xlsx files having `time` format. A fix for this will be part of next release.
 >* **Conversation History - Reset to Defaults Issue**: Even though `Reset to Defaults` button sets the `Conversation History` to 0, the conversation history is still being used in the context. The workaround is to use the slider to set the value.
 >* **Qwen2 and Qwen2.5 model Issue**: Qwen2 and Qwen2.5 models have a known intermittent issue where they sometimes generate unwanted responses containing exclamation marks. This behavior is not consistently reproducible, and simply retrying the query usually resolves the problem.
-<br>
+
+> [!TIP]
+>* **Multiple Assistants Support**: Users can use our Import and Export functions to try out multiple assistant profiles on the same local AI PC. 
+
 
 ### Contact
 ***
