@@ -184,6 +184,7 @@ Our application also allows you to **upload your own model** or **convert models
 >* **Upgrade Errors**: If you are upgrading from ```v1.1.0``` to ```v1.2.0```, the installer might have issues removing all your selected local files. If you wish to remove everything, we recommend fully uninstalling the application using Window's built-in _Add or Remove Programs_, and then installing ```v1.2.0```.
 >* **Model Conversion Error**: The model conversion tool of Intel® AI Assistant Builder only supports models compatible with the **Intel® OpenVINO** platform.
 >* **Query Tabular Data Issue**: Query Tabular Data will fail to process xlsx files having `time` format. A fix for this will be part of next release.
+>* **Conversation History - Reset to Defaults Issue**: Even though `Reset to Defaults` button sets the `Conversation History` to 0, the conversation history is still being used in the context. The workaround is to use the slider to set the value.
 <br>
 
 ### Contact
