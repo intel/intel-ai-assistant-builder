@@ -1,6 +1,6 @@
-![A pile of legos with white text AI-generated content may be incorrect.](media/917896de1185740322e7ad5f45d79c15.jpeg)
+[![A pile of legos with white text AI-generated content may be incorrect.](media/917896de1185740322e7ad5f45d79c15.jpeg)](https://aibuilder.intel.com)
 
-<h1 align="center">Intel® AI Assistant Builder <br> SuperBuilder <br> <a href="https://aibuilder.intel.com">https://aibuilder.intel.com</a></h1>
+<h1 align="center">Intel® AI Assistant Builder <br> SuperBuilder <br></h1>
 
 <p align="justify"><strong>Intel® AI Assistant Builder</strong>—also known as <strong>SuperBuilder</strong>—is Intel’s Gen-AI reference design platform that enables the rapid creation of custom AI assistants and agents tailored to specific industry needs and proprietary data.
 These assistants streamline everyday tasks and deliver intelligent solutions by leveraging your internal knowledge bases—<strong>all while running entirely locally</strong> on Intel®-based AI PCs. Your data and workflows remain private and secure, powered by cutting-edge large language models (LLMs), customizable agentic workflows, and performance-optimized processing.</p>
@@ -67,6 +67,8 @@ These assistants streamline everyday tasks and deliver intelligent solutions by 
 
 ### Getting started 
 ***
+> [!WARNING]
+> Currently, Intel® AI Assistant Builder only supports **one Assistant installation at a time** on your AI PC. Users are advised to fully remove the existing Assistant before installing other ones.
 - #### Download the software
 1. Open your web browser and go to [https://aibuilder.intel.com](https://aibuilder.intel.com/)
 2. Click on one of the available AI Assistants to start the download. For general use, we recommend the “Sales Assistant”. The assistant’s capability (and appearance) can be customized after installation.
@@ -189,6 +191,9 @@ Some models on Hugging Face require user consent before they can be downloaded. 
 >* **Query Tabular Data Issue**: Query Tabular Data will fail to process XLSX files having `time` format. A fix for this will be included in the next release.
 >* **Conversation History - Reset to Defaults Issue**: Although the `Reset to Defaults` button sets the `Conversation History` to 0, the conversation history is still utilized in the context. To resolve this issue, please manually adjust the value using the slider.
 >* **Intermittent Qwen2 and Qwen2.5 Models Issue**: The Qwen2 and Qwen2.5 models have a known intermittent issue where they occasionally generate unwanted responses with exclamation marks. This behavior is not consistently reproducible, but retrying the query typically resolves the problem.
+
+> [!TIP]
+>* **Multiple Assistants Support**: Users can use our Import and Export functions to try out multiple assistant profiles on the same local AI PC. 
 <br>
 
 ### Release Notes
