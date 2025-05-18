@@ -21,11 +21,6 @@ These assistants streamline everyday tasks and deliver intelligent solutions by 
   - [Previous Release Notes](#previous-release-notes)
     - [Version 1.1](#version-11)
     - [Version 1.0](#version-10)
-- [Release Notes](#release-notes-1)
-  - [Version 1.2](#version-12-1)
-  - [Previous Release Notes](#previous-release-notes-1)
-    - [Version 1.1](#version-11-1)
-    - [Version 1.0](#version-10-1)
 - [Contact](#contact)
 
 
