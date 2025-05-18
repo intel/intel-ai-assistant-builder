@@ -165,7 +165,7 @@ Our application also allows you to **upload your own model** or **convert models
 ### Tips, Troubleshooting, Known Issues
 ***
 > [!IMPORTANT]
->* **Installation Issues**: McAfee Antivirus software is known to interfere with the installation process of Intel® AI Assistant Builder on Windows systems. If you encounter installation problems and have McAfee installed, please stop the McAfee real-time scanning feature and then reinstall Intel® AI Assistant Builder. Once the installation is done and the models are loaded, you can re-enable it. Users might experience performance impact when McAfee real-time scanning is running.
+>* **Installation Issues**: Some antivirus software such as McAfee Antivirus software is known to interfere with the installation process of Intel® AI Assistant Builder on Windows systems. If you encounter installation problems and have antivirus installed, please stop the real-time scanning feature and then reinstall Intel® AI Assistant Builder. Once the installation is done and the models are loaded, you can re-enable it. Users might experience performance impact when antivirus real-time scanning is running.
 
 > [!WARNING]
 >* **Model Download Errors**: This issue could be due to a few reasons: 
@@ -184,9 +184,9 @@ Our application also allows you to **upload your own model** or **convert models
 >* **Upgrade Errors**: If you are upgrading from ```v1.1.0``` to ```v1.2.0```, the installer might have issues removing all your selected local files. If you wish to remove everything, we recommend fully uninstalling the application using Window's built-in _Add or Remove Programs_, and then installing ```v1.2.0```.
 >* **Model Conversion Error**: The model conversion tool of Intel® AI Assistant Builder only supports models compatible with the **Intel® OpenVINO** platform. Not all models are supported. <br> 
 Some models on Hugging Face require user consent before they can be downloaded. Our application cannot proceed with the download until you consent to the Hugging Face model terms.
->* **Query Tabular Data Issue**: Query Tabular Data will fail to process xlsx files having `time` format. A fix for this will be part of next release.
->* **Conversation History - Reset to Defaults Issue**: Even though `Reset to Defaults` button sets the `Conversation History` to 0, the conversation history is still being used in the context. The workaround is to use the slider to set the value.
->* **Qwen2 and Qwen2.5 model Issue**: Qwen2 and Qwen2.5 models have a known intermittent issue where they sometimes generate unwanted responses containing exclamation marks. This behavior is not consistently reproducible, and simply retrying the query usually resolves the problem.
+>* **Query Tabular Data Issue**: Query Tabular Data will fail to process XLSX files having `time` format. A fix for this will be included in the next release.
+>* **Conversation History - Reset to Defaults Issue**: Although the `Reset to Defaults` button sets the `Conversation History` to 0, the conversation history is still utilized in the context. To resolve this issue, please manually adjust the value using the slider.
+>* **Intermittent Qwen2 and Qwen2.5 Models Issue**: The Qwen2 and Qwen2.5 models have a known intermittent issue where they occasionally generate unwanted responses with exclamation marks. This behavior is not consistently reproducible, but retrying the query typically resolves the problem.
 <br>
 
 ### Contact
