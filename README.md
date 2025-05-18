@@ -88,8 +88,8 @@ These assistants streamline everyday tasks and deliver intelligent solutions by 
 
   [Sample Code](example/README.md)
 
-- #### [SuperBuilder Service API Guide](docs/)
-  This folder contains API service documentation. SuperBuilder API service's main entry point is the AssistantService class. You can also access the API document from this link: [API Documentation](https://github.com/intel/intel-ai-assistant-builder/tree/main/docs)
+- #### [SuperBuilder Service API Guide](https://intel.github.io/intel-ai-assistant-builder/)
+  This folder contains API service documentation. SuperBuilder API service's main entry point is the AssistantService class. You can also access the API document from this link: [API Documentation](https://intel.github.io/intel-ai-assistant-builder/)
   
    ![Assistant Service](media/api_service_border.png)
  
@@ -182,7 +182,8 @@ Our application also allows you to **upload your own model** or **convert models
 >* **Model Loading Errors**: If a “model loading error” occurs, please make sure to update the GPU and NPU drivers to the latest version. The NPU model requires NPU Driver **32.0.100.3714 at a minimum**.
 >* **Backend Not Ready**: During the first-time Intel® AI Assistant Builder start-up, errors may occur due to backend not ready condition, especially if the application is running for the first time on a system with a slow network connection.
 >* **Upgrade Errors**: If you are upgrading from ```v1.1.0``` to ```v1.2.0```, the installer might have issues removing all your selected local files. If you wish to remove everything, we recommend fully uninstalling the application using Window's built-in _Add or Remove Programs_, and then installing ```v1.2.0```.
->* **Model Conversion Error**: The model conversion tool of Intel® AI Assistant Builder only supports models compatible with the **Intel® OpenVINO** platform.
+>* **Model Conversion Error**: The model conversion tool of Intel® AI Assistant Builder only supports models compatible with the **Intel® OpenVINO** platform. Not all models are supported. <br> 
+Some models on Hugging Face require user consent before they can be downloaded. Our application cannot proceed with the download until you consent to the Hugging Face model terms.
 >* **Query Tabular Data Issue**: Query Tabular Data will fail to process xlsx files having `time` format. A fix for this will be part of next release.
 >* **Conversation History - Reset to Defaults Issue**: Even though `Reset to Defaults` button sets the `Conversation History` to 0, the conversation history is still being used in the context. The workaround is to use the slider to set the value.
 <br>
