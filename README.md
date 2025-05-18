@@ -89,7 +89,7 @@ These assistants streamline everyday tasks and deliver intelligent solutions by 
   [Sample Code](example/README.md)
 
 - #### [SuperBuilder Service API Guide](https://intel.github.io/intel-ai-assistant-builder/)
-  This folder contains API service documentation. SuperBuilder API service's main entry point is the AssistantService class. You can also access the API document from this link: [API Documentation](https://intel.github.io/intel-ai-assistant-builder/)
+  This folder contains API service documentation. SuperBuilder API service's main entry point is the [AssistantService](https://intel.github.io/intel-ai-assistant-builder/html/127056c5-b74d-e4f7-a324-5e4aa7c09935.htm) class. You can also access the API document from this link: [API Documentation](https://intel.github.io/intel-ai-assistant-builder/)
   
    ![Assistant Service](media/api_service_border.png)
  
