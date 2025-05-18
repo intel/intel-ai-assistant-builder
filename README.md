@@ -191,7 +191,6 @@ Some models on Hugging Face require user consent before they can be downloaded. 
 >* **Query Tabular Data Issue**: Query Tabular Data will fail to process XLSX files having `time` format. A fix for this will be included in the next release.
 >* **Conversation History - Reset to Defaults Issue**: Although the `Reset to Defaults` button sets the `Conversation History` to 0, the conversation history is still utilized in the context. To resolve this issue, please manually adjust the value using the slider.
 >* **Intermittent Qwen2 and Qwen2.5 Models Issue**: The Qwen2 and Qwen2.5 models have a known intermittent issue where they occasionally generate unwanted responses with exclamation marks. This behavior is not consistently reproducible, but retrying the query typically resolves the problem.
-
 >* **White Title Bar Issue:** When upgrading from an older version to v1.2.0, you might see a white title bar at the top. This is a known issue. You can use the Appearance Reset button in the settings menu to fix the style. If you want to keep your existing style, make sure you export and back up your existing style before you reset.
 > ![Model Tools](media/white_title_bar.png)
 
