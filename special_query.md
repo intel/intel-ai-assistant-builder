@@ -16,7 +16,8 @@ This feature is meant for analysing and querying tabular files (XLSX, CSV).
 
 **NOTE:** Before using this feature, ensure that the data is structured as a relational SQL table. The first row should contain the column headers, with each following row representing corresponding data entries. Avoid duplicate column names within any worksheet. For XLSX files with multiple worksheets, each worksheet will be treated as a separate table.
 
-![image](https://github.com/user-attachments/assets/4e0c702b-47b7-4bcc-ad8f-2f87d4df3af2)
+![image](https://github.com/user-attachments/assets/0d7d92e9-4bb6-445e-85a5-336aeabd0a6d)
+
 
 ### Resume Match
 This feature provides HR professionals with a powerful tool to quickly identify the most qualified candidates from large applicant pools, while maintaining the ability to dive deeper into specific candidate qualifications through natural conversation. It intelligently scores resumes against job descriptions, extracts key details from top candidates using RAG, and facilitates continuous conversational analysis of resume documents. The system is designed to deliver all relevant information in a streamlined, concise, and efficient way.
