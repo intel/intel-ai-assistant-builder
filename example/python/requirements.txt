@@ -1,4 +1,0 @@
- grpcio-tools
- tzlocal
- pywin32
- tqdm
