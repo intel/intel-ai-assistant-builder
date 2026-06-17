@@ -35,7 +35,7 @@
     "@tauri-apps/plugin-store": "^2.4.0",
     "ajv": "^8.17.1",
     "compare-versions": "^6.1.1",
-    "dompurify": "^3.4.2",
+    "dompurify": "^3.4.9",
     "i18next": "^25.0.1",
     "i18next-http-backend": "^3.0.6",
     "immer": "^10.1.1",
