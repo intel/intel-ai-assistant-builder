@@ -16,10 +16,14 @@ Make sure the model-serving workstation has:
 | Requirement | Notes |
 |-------------|-------|
 <<<<<<< HEAD
+<<<<<<< HEAD
 | Ubuntu Linux x86_64 | Must run on the server host |
 =======
 | Linux x86_64 | Must run on the server host |
 >>>>>>> cf521d5 (update ctl user guide)
+=======
+| Ubuntu Linux x86_64 | Must run on the server host |
+>>>>>>> 8b8df34 (Minor updates to superclaw-ctl user guide)
 | Docker Engine with Compose plugin | `docker compose` must work |
 | Intel GPU | Tested on Intel® Arc B70 Pro |
 | Internet access | Required on first setup to pull images and download models |
@@ -77,10 +81,14 @@ Config saved to /root/.config/superclaw-ctl
 Copy and save the full `vllm_api_key`. This is the **connection key** for the SuperClaw Client App.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 If you miss it, you can reveal it again later:
 =======
 If you miss it, reveal it again later:
 >>>>>>> cf521d5 (update ctl user guide)
+=======
+If you miss it, you can reveal it again later:
+>>>>>>> 8b8df34 (Minor updates to superclaw-ctl user guide)
 
 ```bash
 superclaw-ctl keys show --reveal
@@ -190,11 +198,7 @@ superclaw-ctl models download --verify
 superclaw-ctl models list
 superclaw-ctl models info Qwen3-Coder-Next
 superclaw-ctl models download
-<<<<<<< HEAD
 superclaw-ctl models download --model qwen3-coder-next
-=======
-superclaw-ctl models download --model Qwen3-Coder-Next
->>>>>>> cf521d5 (update ctl user guide)
 superclaw-ctl models download --verify
 ```
 
