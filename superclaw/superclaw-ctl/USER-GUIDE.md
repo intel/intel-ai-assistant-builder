@@ -15,7 +15,11 @@ Make sure the model-serving workstation has:
 
 | Requirement | Notes |
 |-------------|-------|
+<<<<<<< HEAD
 | Ubuntu Linux x86_64 | Must run on the server host |
+=======
+| Linux x86_64 | Must run on the server host |
+>>>>>>> cf521d5 (update ctl user guide)
 | Docker Engine with Compose plugin | `docker compose` must work |
 | Intel GPU | Tested on Intel® Arc B70 Pro |
 | Internet access | Required on first setup to pull images and download models |
@@ -61,14 +65,22 @@ Keys generated. They will be shown once below:
 
   Key            Value
  ------------------------------------------------------------
+<<<<<<< HEAD
   vllm_api_key   <your-api-key>
+=======
+  vllm_api_key   VjQyct_fyDjti48zoj82-BOGYF89y8traWASrDKlsyY
+>>>>>>> cf521d5 (update ctl user guide)
 
 Config saved to /root/.config/superclaw-ctl
 ```
 
 Copy and save the full `vllm_api_key`. This is the **connection key** for the SuperClaw Client App.
 
+<<<<<<< HEAD
 If you miss it, you can reveal it again later:
+=======
+If you miss it, reveal it again later:
+>>>>>>> cf521d5 (update ctl user guide)
 
 ```bash
 superclaw-ctl keys show --reveal
@@ -86,9 +98,15 @@ The first start can take several minutes while the models load. When startup suc
 
 ```text
 Connection
+<<<<<<< HEAD
 URL: http://192.168.1.1:8080
 vLLM Model Router: 192.168.1.1:8080
 Token: <api-key>...
+=======
+URL: http://192.168.52.102:8080
+vLLM Model Router: 192.168.52.102:8080
+Token: VjQy...
+>>>>>>> cf521d5 (update ctl user guide)
 ```
 
 Copy the **URL**. The **Token** shown by `up` is shortened, so do not use it as the Client App connection key. Use the full `vllm_api_key` from `init` or `superclaw-ctl keys show --reveal`.
@@ -172,7 +190,11 @@ superclaw-ctl models download --verify
 superclaw-ctl models list
 superclaw-ctl models info Qwen3-Coder-Next
 superclaw-ctl models download
+<<<<<<< HEAD
 superclaw-ctl models download --model qwen3-coder-next
+=======
+superclaw-ctl models download --model Qwen3-Coder-Next
+>>>>>>> cf521d5 (update ctl user guide)
 superclaw-ctl models download --verify
 ```
 
