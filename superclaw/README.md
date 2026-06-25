@@ -134,6 +134,12 @@ Minimal public-channel setup: `app_mentions:read`, `channels:read`, `chat:write`
 - **WSL repair may be needed if installation stops around 10%.** If `wsl.exe` reports `Wsl/CallMsi/Install/REGDB_E_CLASSNOTREG` or says WSL is corrupted, open PowerShell as Administrator, run `wsl --install --no-distribution`, restart Windows, and run the installer again. If needed, run `wsl --update` as Administrator, restart, and try again.
 - **`owt.failed` can mean the backend is unreachable or loopback traffic is proxied.** If `http://127.0.0.1:8787/health` returns `403 Forbidden`, add `127.0.0.1,localhost,::1` to your user `NO_PROXY` setting, keeping any existing corporate entries, then stop SuperClaw and relaunch it from a new terminal. If it is still stuck, stop SuperClaw, run `wsl.exe --unregister superclaw-docker`, and relaunch.
 - **Corporate networks may require proxy setup before installation.** If your corporate network requires a proxy for downloads, configure the required HTTP proxy before installing SuperClaw. On an open network, no proxy setup is needed. If you switch between a corporate network and an outside network, quit SuperClaw, run `wsl.exe --unregister superclaw-docker`, and reopen the app so the backend is recreated with the current network settings.
+- **Proxy or VPN environments may require `networkingMode=mirrored` in `.wslconfig`.** If SuperClaw cannot reach the internet or your corporate proxy from within WSL2, add the following to `C:\Users\<username>\.wslconfig` (create the file if it does not exist):
+  ```ini
+  [wsl2]
+  networkingMode=mirrored
+  ```
+  This makes WSL2 mirror your Windows network interfaces so that proxy and VPN routes are automatically inherited. After saving the file, run `wsl --shutdown` in PowerShell or Command Prompt to restart WSL2, then relaunch SuperClaw.
 - **Uninstall does not remove local user data.** Data may remain under `C:\Users\<user_id>\AppData\Local\SuperClaw\scbms`.
 - **Local MCP servers must use HTTP or SSE transport.** Stdio-based MCP servers are not supported in the current release.
 
