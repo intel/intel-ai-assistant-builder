@@ -89,7 +89,7 @@ const WorkflowContextProvider = ({ children }) => {
         if (isHybrid) {
           return ['Qwen3-VL-8B-GGUF'];
         } else {
-          return ['Qwen2.5-VL-7B-Instruct-int4-ov', 'Phi-3.5-vision-instruct-int4-ov'];
+          return ['Qwen3-VL-8B-Instruct-int4-ov', 'Phi-3.5-vision-instruct-int4-ov'];
         }
       case WorkflowType.SUPER_AGENT:
         if (isHybrid) {

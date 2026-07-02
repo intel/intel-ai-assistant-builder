@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 import Link from "@mui/material/Link";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
+import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutlined";
 import CancelOutlinedIcon from "@mui/icons-material/CancelOutlined";
 import ErrorIcon from "@mui/icons-material/Error";
 import { useContext, useState, useEffect } from "react";

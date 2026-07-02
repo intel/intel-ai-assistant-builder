@@ -328,18 +328,6 @@ const Setting = ({ isOpen, setIsOpen, onClose }) => {
       return;
     } else if (assistantName.trim().length === 0 || resetName) {
       switch (assistant.short_name) {
-        case 'HR':
-          setAssistantName('Human Resources - Intel® AI Super Builder');
-          break;
-        case 'SA':
-          setAssistantName('Sales Assistant - Intel® AI Super Builder');
-          break;
-        case 'MA':
-          setAssistantName('Medical Assistant - Intel® AI Super Builder');
-          break;
-        case 'FA':
-          setAssistantName('Finance Assistant - Intel® AI Super Builder');
-          break;
         case 'IO':
           setAssistantName('Intel® AI Super Builder - OpenVINO');
           break;

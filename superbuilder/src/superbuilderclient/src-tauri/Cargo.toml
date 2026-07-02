@@ -34,14 +34,13 @@ tauri-plugin-store = "2"
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 futures = "0.3"
-reqwest = { version = "0.11", default-features = false, features = ["json", "rustls-tls"] }
+reqwest = { version = "0.13", default-features = false, features = ["json", "rustls"] }
 toml = "1.1"
 roxmltree = "0.21"
 base64 = "0.22.1"
 image = "0.25.5"
 sys-locale = "0.3.2"
 rand = "0.10.1"
-rustls-webpki = "0.103.13"
 
 # grpc
 tonic = "0.14"
@@ -84,4 +83,3 @@ strip = true         # Strip symbols for smaller binary
 
 [dev-dependencies]
 rand = "0.10.1"
-rustls-webpki = "0.103.13"

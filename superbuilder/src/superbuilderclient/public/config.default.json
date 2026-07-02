@@ -12,7 +12,7 @@
             "sidebar_box_refresh_bg_color": "#0054ae",
             "sidebar_box_refresh_hover_bg_color": "#4d94e8",
             "models": {
-                "chat_model": "Phi-3-mini-4k-instruct-int4-ov",
+                "chat_model": "Qwen3-4B-int4-ov",
                 "embedding_model": "bge-base-en-v1.5-int8-ov",
                 "ranker_model": "bge-reranker-base-int8-ov"
             }
