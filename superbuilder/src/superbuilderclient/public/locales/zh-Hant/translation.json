@@ -3,30 +3,32 @@
     "title": "未滿足最低硬體規格要求",
     "part_1": "您的硬體與此軟體不相容",
     "part_2": "請檢查最低硬體需求：",
-    "part_3": "CPU：英特爾® 酷睿™ Ultra 處理器第 1 系列（原 Meteor Lake）",
+    "part_3": "CPU：英特爾® 酷睿™ Ultra 處理器第 1 代（代號 Meteor Lake）",
     "part_4": "記憶體（RAM）：16GB",
     "part_5": "儲存空間：執行包含 1 個 LLM 的 Super Builder 需 4GB",
-    "part_6": "GPU： 整合的英特爾® 顯示卡，驅動程式版本為 32.0.101.8132 或更高版本",
+    "part_6": "GPU：整合英特爾® 顯示卡，驅動程式版本為 32.0.101.8132 或更高版本",
     "part_7": "網路：需寬頻連線以下載 LLM 及其他元件",
     "model_download_status": "模型下載狀態"
   },
   "non_validate_hardware": {
     "title": "警告：您的硬體尚未驗證",
     "part_1": "您的系統尚未通過 SuperBuilder 團隊的驗證。",
-    "part_2": "儘管您可以繼續使用本軟體，但請注意，我們無法保證本軟體能夠達到最佳性能。"
-  },  "active_file_tooltip": {
-    "part_1": "僅向 AI 助理新增相關檔案。",
+    "part_2": "儘管您可以繼續使用本軟體，但請注意，我們無法保證本軟體能夠達到最佳效能。"
+  },
+  "active_file_tooltip": {
+    "part_1": "僅向 AI 智能體新增相關檔案。",
     "part_2": "它們提供正確的上下文，使答案更準確、更切題，減少無關結果。",
     "part_3": "提示：選擇與您的問題直接相關的檔案。"
-  },  "draganddrop": {
+  },
+  "draganddrop": {
     "button": {
       "fiels": "新增檔案",
       "folders": "新增資料夾",
       "manage_kb": "管理知識庫",
-      "manage_mcp": " 管理 MCP 伺服器"
+      "manage_mcp": "管理 MCP 伺服器"
     },
     "title": "知識庫",
-    "subtitle": "• 向知識庫新增檔案可強化助手能力。針對特定查詢，請直接在查詢中附加檔案。",
+    "subtitle": "• 向知識庫新增檔案可強化智能體能力。針對特定查詢，請直接在查詢中附加檔案。",
     "area": "拖曳檔案至此處",
     "file_manage": {
       "back": "返回問答介面",
@@ -52,7 +54,7 @@
       "back": "返回問答介面",
       "back-to-manager": "返回 MCP 管理",
       "mcp_marketplace": "從 MCP 市場新增",
-      "add": "新增到 MCP 管理",
+      "add": "新增 MCP 伺服器",
       "edit": "編輯 MCP 伺服器",
       "remove": "移除 MCP 伺服器",
       "mcp_server": "MCP 伺服器",
@@ -60,61 +62,61 @@
       "mcp_server_url": "MCP 伺服器 URL",
       "mcp_server_env": "環境變數（選填）",
       "mcp_server_env_placeholder": "例如：{\"KEY1\":\"val1\",\"KEY2\":\"val2\"} 或 KEY1=val1 KEY2=val2",
-      "mcp_server_env_error": "格式無效。使用 JSON {\"KEY\":\"value\"}、KEY=VALUE 或 KEY:VALUE（空格分隔）",
+      "mcp_server_env_error": "格式無效。請使用 JSON {\"KEY\":\"value\"}、KEY=VALUE 或 KEY:VALUE（空格分隔）",
       "mcp_server_command": "MCP 伺服器指令",
       "mcp_server_command_args": "MCP 伺服器指令參數（選填）",
       "mcp_server_info": "MCP 伺服器資訊",
-      "mcp_server_info_empty": "目前沒有 MCP 伺服器資訊，請啟用以獲取資訊",
-      "mcp_server_info_fetching": "正在獲取 MCP 伺服器資訊...",
+      "mcp_server_info_empty": "目前沒有 MCP 伺服器資訊，請先啟動後再檢視",
+      "mcp_server_info_fetching": "正在取得 MCP 伺服器資訊...",
       "url_radio": "URL",
       "command_radio": "指令",
       "add_button": "新增",
       "save_button": "儲存",
       "close_button": "關閉",
-      "disabled_checkbox": "禁用",
-      "load_button": "載入MCP伺服器",
-      "mcp_agent": "MCP 助理",
-      "add_agent": "新增 MCP 助理資訊",
-      "edit_agent": "編輯 MCP 助理資訊",
-      "add_agent_button": "新增助理",
-      "header_remove_agent_button": "移除助理",
-      "mcp_agent_name": "MCP 助理名稱",
+      "disabled_checkbox": "停用",
+      "load_button": "載入 MCP 伺服器",
+      "mcp_agent": "MCP 智能體",
+      "add_agent": "新增 MCP 智能體資訊",
+      "edit_agent": "編輯 MCP 智能體資訊",
+      "add_agent_button": "新增智能體",
+      "header_remove_agent_button": "移除智能體",
+      "mcp_agent_name": "MCP 智能體名稱",
       "mcp_agent_description": "描述",
       "mcp_agent_system_prompt": "系統提示詞",
       "mcp_agent_mcp_server": "MCP 伺服器",
       "mcp_agent_mcp_server_placeholder": "選擇 MCP 伺服器",
-      "mcp_agent_mcp_server_note": "注意：至少需要新增一個 MCP 伺服器才能啟動助理",
+      "mcp_agent_mcp_server_note": "注意：至少需要新增一個 MCP 伺服器才能啟動智能體",
       "confirm_remove": "確認移除",
-      "confirm_remove_message": "請確認是否移除選定的 MCP 助理",
+      "confirm_remove_message": "請確認是否移除選定的",
       "remove_button": "移除",
       "docker_recommendation_title": "推薦：",
-      "docker_recommendation_description": "為了獲得更好的安全性與隔離性，請考慮配合 Docker 使用 Command 方法（需要安裝 Docker Desktop）。",
-      "docker_recommendation_visit": "訪問",
+      "docker_recommendation_description": "為了獲得更好的安全性與隔離性，請考慮配合 Docker 使用指令方式（需要安裝 Docker Desktop）。",
+      "docker_recommendation_visit": "造訪",
       "docker_servers_link": "Docker MCP Hub",
-      "docker_recommendation_suffix": "注意：您的系統必須安裝 Docker Desktop。" ,
-      "guide_button": "使用指南",
+      "docker_recommendation_suffix": "注意：您的系統必須安裝 Docker Desktop。",
+      "guide_button": "【重要使用指南】",
       "guide_tooltip": "MCP 管理入門指南",
-      "guide_title": "MCP Manager 使用入門",
-      "guide_step1_title": "第一步 — 新增 MCP Server",
-      "guide_step1_desc": "點擊 MCP Servers 表格中的「Add MCP Server」按鈕，填寫伺服器名稱及命令，確認參數正確後點擊「Add」完成新增。",
-      "guide_step2_title": "第二步 — 新增 MCP Agent",
-      "guide_step2_desc": "點擊 MCP Agents 表格中的「Add Agent」按鈕，填寫 Agent 名稱與描述，並從清單中選取一個或多個 MCP Server。至少需選擇一個 Server 才能啟動 Agent。",
-      "guide_step3_title": "第三步 — 啟動 MCP Agent",
-      "guide_step3_desc": "在 MCP Agents 表格中找到剛新增的 Agent，點擊「Start」按鈕。Agent 將連線至所設定的 MCP Server，啟動後即可在對話中使用。",
+      "guide_title": "MCP 管理入門",
+      "guide_step1_title": "第一步 — 新增 MCP 伺服器",
+      "guide_step1_desc": "點擊 MCP 伺服器表格中的「新增 MCP 伺服器」按鈕，填寫伺服器名稱及指令，確認參數正確後點擊「新增」完成操作。",
+      "guide_step2_title": "第二步 — 新增 MCP 智能體",
+      "guide_step2_desc": "點擊 MCP 智能體表格中的「新增智能體」按鈕，填寫智能體名稱與描述，並從清單中選取一個或多個 MCP 伺服器。至少需選取一個伺服器才能啟動智能體。",
+      "guide_step3_title": "第三步 — 啟動 MCP 智能體",
+      "guide_step3_desc": "在 MCP 智能體表格中找到剛新增的智能體，點擊「啟動」按鈕。智能體將連線至所設定的 MCP 伺服器，啟動後即可在對話中使用。",
       "guide_note_prefix": "在新增 MCP 伺服器前，請確保已於系統環境 PATH 中安裝並可使用 uvx 和 npx。這些工具為大多數 MCP 伺服器正常運作所必需。",
       "guide_note_prefix2": "注意：大多數 MCP 伺服器需要已安裝 uvx 和 npx，且可於系統環境 PATH 中使用。",
       "guide_note_link": "【更多資訊】",
-      "cannot_remove_servers_tooltip": "移除 MCP 伺服器。請確保先移除使用該伺服器的所有 MCP 助理。",
-      "cannot_remove_agents_tooltip": "移除 MCP 助理。在移除前請先停止 MCP 助理。"
+      "cannot_remove_servers_tooltip": "移除 MCP 伺服器。請確保先移除使用該伺服器的所有 MCP 智能體。",
+      "cannot_remove_agents_tooltip": "移除 MCP 智能體。在移除前請先停止 MCP 智能體。"
     },
     "tools_dialog": {
       "title": "MCP 伺服器工具",
       "confirm_title": "審查並批准 MCP 伺服器工具",
-      "confirm_title_multi": "審查助理工具",
-      "consent_alert_title": "MCP 助理需要工具批准",
-      "consent_message": "MCP 助理 \"{{agentName}}\" 需要這些工具才能運行。請審查並批准。",
-      "consent_message_multi": "此助理依賴以下 MCP 伺服器和工具來運行。請仔細審查它們，並確保它們是安全的並且來自可信來源。",
-      "loading": "正在獲取工具...",
+      "confirm_title_multi": "審查智能體工具",
+      "consent_alert_title": "MCP 智能體需要工具批准",
+      "consent_message": "MCP 智能體「{{agentName}}」需要這些工具才能運行。請審查並批准。",
+      "consent_message_multi": "此智能體依賴以下 MCP 伺服器和工具來運行。請仔細審查它們，確保它們安全且來自可信來源。",
+      "loading": "正在取得工具...",
       "no_tools": "沒有可用工具",
       "no_description": "沒有可用描述",
       "available_tools": "可用工具",
@@ -125,18 +127,18 @@
       "parameters": "參數",
       "close": "關閉",
       "confirm": "批准並繼續",
-      "reject": "拒絕並停止助理",
+      "reject": "拒絕並停止智能體",
       "server_indicator": "MCP 伺服器 {{current}} / {{total}}"
     },
     "server_table": {
-      "command_title": "帶指令的 MCP 伺服器",
-      "url_title": "帶 URL 的 MCP 伺服器",
-      "name": "MCP伺服器名稱",
+      "command_title": "透過指令連線的 MCP 伺服器",
+      "url_title": "透過 URL 連線的 MCP 伺服器",
+      "name": "MCP 伺服器名稱",
       "url": "URL",
-      "env": "環境變量",
+      "env": "環境變數",
       "command": "指令",
       "command_args": "指令參數",
-      "actions": "Actions",
+      "actions": "操作",
       "start": "啟動",
       "stop": "停止",
       "starting": "正在啟動",
@@ -144,13 +146,13 @@
       "edit": "編輯"
     },
     "agent_table": {
-      "agent_name": "助理名稱",
+      "agent_name": "智能體名稱",
       "agent_description": "描述",
       "system_prompt": "系統提示詞",
       "mcp_server": "MCP 伺服器",
       "actions": "操作",
       "remove": "移除",
-      "no_mcpserver": "未選擇MCP伺服器"
+      "no_mcpserver": "未選取 MCP 伺服器"
     },
     "marketplace": {
       "title": "MCP 市場",
@@ -206,21 +208,22 @@
       "file_path_dialog_title_image": "選取影像查詢檔案"
     },
     "user": {
-      "notice": "如果圖像相關任務已完成，請切換回文本LLM進行常規查詢以獲得更好的回覆。",
+      "notice": "如果影像相關任務已完成，請切換回文字 LLM 進行常規查詢以獲得更好的回覆。",
       "welcome": "歡迎，",
       "subwelcome": "今天需要什麼幫助？",
-      "workflow_placeholder": "隨意提問 - 您的助理可能會出錯。請核實重要資訊。"
+      "current_model": "目前模型：",
+      "workflow_placeholder": "隨意提問 - 您的智能體可能會出錯。請核實重要資訊。"
     }
   },
   "topbar": {
     "title": "關於 ",
-    "content_part_1": "本應用已針對本機硬體 AI PC 能力最佳化。造訪",
+    "content_part_1": "本應用已針對本機硬體的 AI PC 能力最佳化。造訪",
     "content_part_2": "Intel.com/AIPC",
     "content_part_3": "取得最新 AI PC 資訊及產品動態",
     "content_part_4": "Super Builder 應用套件：",
     "content_part_4_1": "造訪",
     "content_part_5": "英特爾® AI Super Builder 網站",
-    "content_part_6": "大型語言模型：",
+    "content_part_6": "對話模型：",
     "content_part_7": "嵌入模型：",
     "content_part_8": "重新排序模型：",
     "content_part_9": "開源元件及授權資訊",
@@ -239,7 +242,7 @@
     "setting": "應用程式設定",
     "admin_mode": "管理員模式",
     "mode_enable": "已啟用",
-    "mode_disable": "已禁用",
+    "mode_disable": "已停用",
     "mcp_manager": "MCP 管理"
   },
   "model_downloader": {
@@ -256,8 +259,11 @@
       "model_folder": "模型儲存目錄：",
       "status_complete": "模型下載完成 - 立即體驗",
       "status_failed": "模型下載失敗",
-      "troubleshooting_prefix": "如需幫助，請參閱「Tips, Troubleshooting, Known Issues」部分於",
-      "troubleshooting_link": "此處。"
+      "troubleshooting_prefix": "如需幫助，請參閱「Tips, Troubleshooting, Known Issues」部分：",
+      "troubleshooting_link": "此處。",
+      "embedding_model": "嵌入模型",
+      "ranker_model": "重新排序模型",
+      "chat_model": "對話模型"
     }
   },
   "email": {
@@ -274,7 +280,7 @@
     "fluid_modal": "為 SuperBuilder 建構自訂模型",
     "appearance": {
       "title": "外觀",
-      "description": "設定助手名稱、視覺樣式與互動體驗"
+      "description": "設定智能體名稱、視覺樣式與互動體驗"
     },
     "name": "名稱",
     "visuals": {
@@ -290,7 +296,7 @@
       },
       "language": {
         "title": "介面語言",
-        "subtitle": "選擇顯示語言"
+        "subtitle": "選取顯示語言"
       },
       "button": {
         "reset": "恢復預設",
@@ -310,14 +316,14 @@
       "other": "其他模型",
       "current": {
         "currentllm": "目前 LLM",
-        "currentllm_tips": "*切換可能觸發模型下載",
+        "currentllm_tips": "切換可能觸發模型下載",
         "embedding": "目前嵌入模型",
         "embedding_tips": "*切換可能觸發模型下載",
-        "ranker": "目前排序模型",
+        "ranker": "目前重新排序模型",
         "ranker_tips": "*切換可能觸發模型下載",
         "endpoint": "模型下載端點",
         "endpoint_tips1": "下載異常？請切換端點。",
-        "endpoint_tips2": "中國大陸用戶建議選擇 ModelScope 端點",
+        "endpoint_tips2": "中國大陸用戶建議選取 ModelScope 端點",
         "no_other_model": "沒有其他可用模型",
         "loading": "載入中",
         "all_models": "所有模型"
@@ -327,14 +333,14 @@
         "type": "模型類型：",
         "type_chat": "對話模型",
         "type_embedding": "嵌入模型",
-        "type_ranker": "排序模型",
+        "type_ranker": "重新排序模型",
         "method": "操作方式：",
         "method_copy": "複製目錄",
         "method_move": "移動目錄",
         "upload_button": "上傳模型",
         "upload_button_tips": "*使用者需自行確保模型正確性*",
         "conversion": "模型格式轉換",
-        "select_a_folder": "選擇資料夾",
+        "select_a_folder": "選取資料夾",
         "tips": "按此瞭解如何上傳您自己的模型"
       },
       "conversion": {
@@ -346,12 +352,12 @@
         "model_type": "模型類型：",
         "chat": "對話模型",
         "embedder": "嵌入模型",
-        "reranker": "排序模型",
+        "reranker": "重新排序模型",
         "agreement": "我已詳閱並同意所有授權條款及條件。",
         "convert_button": "轉換模型",
         "notice_1": "您可以隨時啟用模型。請前往：",
         "notice_2": "設定 > 模型 > 選擇模型",
-        "notice_3": "並從下拉式清單中選擇所需模型。",
+        "notice_3": "並從下拉式清單中選取所需模型。",
         "close_button": "關閉",
         "active_button": "啟用模型並關閉視窗"
       },
@@ -373,7 +379,7 @@
     },
     "parameters": {
       "title": "進階參數",
-      "description": "調整助手行為（建議進階使用者操作）",
+      "description": "調整智能體行為（建議進階使用者操作）",
       "reset_button": "恢復預設設定",
       "llm": {
         "title": "LLM 參數",
@@ -401,11 +407,11 @@
       }
     },
     "alert": {
-      "title": "系統不支援",
-      "part_1": "您的硬體不相容此針對 NPU 深度最佳化的模型",
+      "title": "不支援",
+      "part_1": "您的硬體與此針對 NPU 深度最佳化的模型不相容",
       "part_2": "請檢查最低硬體需求：",
-      "part_3": "CPU：英特爾® 酷睿™ Ultra 處理器第 2 系列（原 Lunar Lake）",
-      "part_4": "NPU 驅動程式："
+      "part_3": "CPU：英特爾® 酷睿™ Ultra 處理器第 2 代（代號 Lunar Lake）",
+      "part_4": "NPU 驅動程式：建議從以下位址安裝最新版本："
     },
     "notice": {
       "steps": {
@@ -415,29 +421,29 @@
         "step3": "接著，使用以下指令以 int4 對稱格式下載並量化模型：",
         "step3_note": "其中 <1><MODEL_ID></1> 對應 HuggingFace 模型 ID，<1><OUTPUT></1> 是產生的 OV 模型儲存路徑。",
         "step4": "對於 LLM 模型，可使用 <1>--task text-generation-with-past</1>，並需要指定 <1>group_size</1>、<1>sym</1> 和 <1>ratio</1> 等參數 😊",
-        "step5": "嵌入器（Embedder）和重排器（Reranker）的流程與 LLM 類似，差別在於需指定任務類型，此處採用 int8 量化：",
-        "step5_embedder": "嵌入器指令：",
-        "step5_reranker": "重排器指令：",
+        "step5": "嵌入模型和重新排序模型的流程與 LLM 類似，差別在於需指定任務類型。此處採用 int8 量化：",
+        "step5_embedder": "嵌入模型指令：",
+        "step5_reranker": "重新排序模型指令：",
         "step6": "在設定面板中使用「上傳模型」按鈕上傳模型。準備壓縮檔時，請確保資料夾直接包含檔案而無子目錄（如下範例所示）。"
       }
     }
   },
   "status": {
     "could_not_load_model": "無法載入模型，請嘗試其他模型",
-    "checking_api_service": "正在檢查API服務",
-    "hardware_not_met": "未達以下最低硬體需求：Intel Core Ultra Series 1 處理器、16GB 記憶體、4GB 儲存空間、整合式 Intel 顯示卡及網際網路連線",
-    "failed_to_connect_service": "無法連線至API服務，請嘗試重新啟動應用程式",
-    "checking_local_llm": "正在檢查本機LLM模型",
+    "checking_api_service": "正在檢查 API 服務",
+    "hardware_not_met": "未達以下最低硬體需求：英特爾® 酷睿™ Ultra 處理器第 1 代、16GB 記憶體、4GB 儲存空間、整合英特爾® 顯示卡及網際網路連線",
+    "failed_to_connect_service": "無法連線至 API 服務，請嘗試重新啟動應用程式",
+    "checking_local_llm": "正在檢查本機 LLM 模型",
     "awaiting_download_models": "等待確認以下載模型",
-    "downloading_models": "正在下載LLM模型",
-    "downloading_retry": "LLM模型下載失敗，正在重試...",
-    "downloading_retry_1": "LLM模型下載失敗，正在第",
+    "downloading_models": "正在下載 LLM 模型...",
+    "downloading_retry": "LLM 模型下載失敗，正在重試...",
+    "downloading_retry_1": "LLM 模型下載失敗，正在第",
     "downloading_retry_2": "次重試...",
     "failed_to_download_models": "模型下載失敗，請檢查後重新啟動應用程式",
     "checking_backend": "正在檢查後端...",
     "backend_not_ready": "後端未就緒，請檢查後重新啟動應用程式",
     "loading_models": "正在載入模型...",
-    "updating_model": "正在更新會話LLM模型：",
+    "updating_model": "正在更新會話 LLM 模型：",
     "ready": "就緒",
     "could_not_load_model_2": "無法載入模型"
   },
@@ -466,7 +472,7 @@
     "header_model_updates_required": "模型需要更新",
     "incompatible_models_message": "以下模型與目前版本不相容，必須移除並重新下載：",
     "preparing_remove_models": "正在準備移除模型...",
-    "removing_model": "正在移除 {{modelName}} ({{current}}/{{total}})...",
+    "removing_model": "正在移除 {{modelName}}（{{current}}/{{total}}）...",
     "remove_models_success": "所有模型已成功移除，正在重新啟動應用程式...",
     "remove_models_failed": "部分模型移除失敗：{{failedModels}}",
     "remove_models_failed_generic": "模型移除失敗。",
