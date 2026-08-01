@@ -1,5 +1,7 @@
 # Inference Edge Server User Guide
 
+> 📖 **New to SuperClaw?** Start with the [**SuperClaw README**](../README.md) for the client app and general usage instructions before diving in here.
+
 This guide shows how to set up the SuperClaw inference edge server on the model-serving workstation.
 
 Run these commands on the workstation, not on the AI PC. The workstation runs the local vLLM model-serving stack, and the SuperClaw Client App connects to it by using two values:
