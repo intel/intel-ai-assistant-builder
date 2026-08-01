@@ -13,13 +13,13 @@ For more details, read Intel's article, [Solving the Agentic AI Trilemma: Cost, 
 ---
 
 <a name="toc"></a>
-
-- [User Guide](#user-guide)
-- [Release Schedule and Configurations](#release-schedule-and-configurations)
+- [Overview](#overview)
+- [Releases](#releases)
 - [Setup Instructions](#setup-instructions)
+- [App Settings](#app-settings)
 - [Known Issues](#known-issues)
 
-## User Guide
+## Overview
 
 ### Why SuperClaw
 
@@ -64,7 +64,50 @@ To enable Auto Route, configure both a local model and at least one cloud model 
 
 ---
 
-### Settings and Extensibility
+## Releases
+
+### v1.1 (Current)
+
+SuperClaw v1.1 supports two deployment modes:
+
+- **Standalone Windows app:** One PTL system with at least 64GB of RAM running at 8,000 MT/s or faster and a B370 (10 Xe) or B390 (12 Xe) iGPU runs both the model-serving workload and the [SuperClaw v1.1 desktop app](https://aibuilder.intel.com/installers/SuperClaw-Setup-1.1.0.731.exe).
+- **Edge-connected:** The PTL system can connect to an enterprise edge server for model serving.
+
+### v1.0 (Past Release)
+
+SuperClaw v1.0 requires a two-system configuration:
+
+- **An AI PC companion device**, such as a Wildcat Lake system with 16GB of memory, runs the [SuperClaw v1.0 desktop app](https://aibuilder.intel.com/installers/SuperClaw-Setup-1.0.0.623.exe).
+- **An enterprise edge server**, configured as a model-serving workstation with four B70 cards, runs Qwen3-Coder-Next-80B.
+
+Users interact with SuperClaw on the AI PC while the model workload runs on the edge server.
+
+### Following Release (Planned)
+
+The following release will broaden support for PTL 32GB and Wildcat Lake (WCL) systems.
+
+---
+
+## Setup Instructions
+
+1. **Update the graphics driver on 64GB PTL systems.** Install [Intel® Arc™ Graphics - Windows](https://www.intel.com/content/www/us/en/download/785597/intel-arc-graphics-windows.html) version **32.0.101.8860 or later** for significantly better model-inference performance.
+
+2. **Configure your network.** If your corporate network requires a proxy for downloads, such as fetching models from Hugging Face, configure it before installing SuperClaw.
+
+    If SuperClaw cannot access the internet or your corporate proxy from WSL2, add the following to `C:\Users\<username>\.wslconfig` (create the file if necessary):
+
+        ```ini
+        [wsl2]
+        networkingMode=mirrored
+        ```
+
+3. **Install SuperClaw and restart Windows.** The SuperClaw backend runs in an isolated WSL environment. If WSL is not already available, the SuperClaw installer installs it. Restart Windows after WSL is installed, then continue or rerun the SuperClaw installer.
+
+4. **Edge Server setup.** If you want to connect to the edge inference server refer to the [User Guide](./superclaw-ctl/USER-GUIDE.md).
+
+---
+
+## App Settings
 
 The **Advanced** area is where enterprises and users tailor SuperClaw to their hardware, providers, and workflows. It is organized into seven sections:
 
@@ -143,51 +186,6 @@ Create a custom agent by uploading a `.md` configuration file or entering the co
 - **Web & Research Retrieval:** Find evidence on the web and retrieve information for trend-oriented research.
 
 > 💡 **Tip:** To use a custom agent, mention it with `@` in the prompt window or select it from the agent dropdown menu.
-
----
-
-## Release Schedule and Configurations
-
-### v1.1 (Current)
-
-SuperClaw v1.1 supports two deployment modes:
-
-- **Standalone Windows app:** One PTL system with at least 64GB of RAM running at 8,000 MT/s or faster and a B370 (10 Xe) or B390 (12 Xe) iGPU runs both the model-serving workload and the [SuperClaw v1.1 desktop app](https://aibuilder.intel.com/installers/SuperClaw-Setup-1.1.0.731.exe).
-- **Edge-connected:** The PTL system can connect to an enterprise edge server for model serving.
-
-### v1.0 (Past Release)
-
-SuperClaw v1.0 requires a two-system configuration:
-
-- **An AI PC companion device**, such as a Wildcat Lake system with 16GB of memory, runs the [SuperClaw v1.0 desktop app](https://aibuilder.intel.com/installers/SuperClaw-Setup-1.0.0.623.exe).
-- **An enterprise edge server**, configured as a model-serving workstation with four B70 cards, runs Qwen3-Coder-Next-80B.
-
-Users interact with SuperClaw on the AI PC while the model workload runs on the edge server.
-
-### Following Release (Planned)
-
-The following release will broaden support for PTL 32GB and Wildcat Lake (WCL) systems.
-
----
-
-## Setup Instructions
-
-1. **Prepare the model-serving environment.** For inference on an enterprise edge server with four Intel® Arc™ Pro B70 GPUs, follow the [User Guide](./superclaw-ctl/USER-GUIDE.md).
-
-2. **Configure your network.** If your corporate network requires a proxy for downloads, such as fetching models from Hugging Face, configure it before installing SuperClaw.
-
-3. **Install SuperClaw and restart Windows.** The SuperClaw backend runs in an isolated WSL environment. If WSL is not already available, the SuperClaw installer installs it. Restart Windows after WSL is installed, then continue or rerun the SuperClaw installer.
-
-4. **Enable mirrored networking when required.** If SuperClaw cannot access the internet or your corporate proxy from WSL2, add the following to `C:\Users\<username>\.wslconfig` (create the file if necessary):
-
-    ```ini
-    [wsl2]
-    networkingMode=mirrored
-    ```
-
-    This setting allows WSL2 to inherit Windows proxy and VPN routes. After saving the file, run `wsl --shutdown` in PowerShell or Command Prompt, then relaunch SuperClaw.
-
-5. **Update the graphics driver on 64GB PTL systems.** Install [Intel® Arc™ Graphics - Windows](https://www.intel.com/content/www/us/en/download/785597/intel-arc-graphics-windows.html) version **32.0.101.8860 or later** for significantly better model-inference performance.
 
 ---
 
