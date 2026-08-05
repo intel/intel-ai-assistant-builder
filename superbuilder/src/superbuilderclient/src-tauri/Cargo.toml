@@ -83,3 +83,6 @@ strip = true         # Strip symbols for smaller binary
 
 [dev-dependencies]
 rand = "0.10.1"
+
+[patch.crates-io]
+glib = { path = "vendor-patches/glib-0.18.5" }
