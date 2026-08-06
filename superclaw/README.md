@@ -17,7 +17,7 @@ For more details, read Intel's article, [Solving the Agentic AI Trilemma: Cost, 
 - [Releases](#releases)
 - [Setup Instructions](#setup-instructions)
 - [App Settings](#app-settings)
-- [Known Issues](#known-issues)
+- [FAQ](#faq)
 
 ## Overview
 
@@ -189,20 +189,40 @@ Create a custom agent by uploading a `.md` configuration file or entering the co
 
 ---
 
-## Known Issues
+## FAQ
 
-- **Windows Smart App Control may prevent SuperClaw services from starting.** If Windows Security reports that it blocked a SuperClaw component, open **Windows Security > App & browser control > Smart App Control settings** and turn Smart App Control off, then relaunch SuperClaw. Disable this protection only after confirming it is the cause; turning it off reduces application-security protection, and Windows may require a reset or reinstall before it can be enabled again.
-- **The v1.1 standalone desktop app requires an updated graphics driver on 64GB PTL systems.** Install [Intel® Arc™ Graphics - Windows](https://www.intel.com/content/www/us/en/download/785597/intel-arc-graphics-windows.html) version **32.0.101.8860 or later** for significantly better model-inference performance.
-- **CPU virtualization is required to install WSL.** SuperClaw uses WSL, which requires CPU virtualization to be enabled in BIOS/UEFI. If installation fails, enable Intel Virtualization Technology, also called Intel VT-x, restart Windows, and run the installer again. On managed PCs, contact your IT administrator if the setting is locked or unavailable.
-- **Restart Windows after installing WSL.** If WSL is installed during setup and Windows is not restarted, the SuperClaw installer may stop or have errors. Restart Windows, then run the installer again so the WSL components are fully available.
-- **WSL repair may be needed if installation stops around 10%.** If `wsl.exe` reports `Wsl/CallMsi/Install/REGDB_E_CLASSNOTREG` or says WSL is corrupted, open PowerShell as Administrator, run `wsl --install --no-distribution`, restart Windows, and run the installer again. If needed, run `wsl --update` as Administrator, restart, and try again.
-- **Corporate networks may require proxy setup before installation.** If your corporate network requires a proxy for downloads, configure the required HTTP proxy before installing SuperClaw. On an open network, no proxy setup is needed. If you switch between a corporate network and an outside network, quit SuperClaw, run `wsl.exe --unregister superclaw-docker`, and reopen the app so the backend is recreated with the current network settings.
-- **Use `networkingMode=mirrored` in proxy or VPN environments.** If SuperClaw cannot reach the internet or your corporate proxy from within WSL2, add the following to `C:\Users\<username>\.wslconfig` (create the file if it does not exist):
+### Why does Windows Smart App Control prevent SuperClaw from starting?
+
+If Windows Security reports that it blocked a SuperClaw component, open **Windows Security > App & browser control > Smart App Control settings** and turn Smart App Control off, then relaunch SuperClaw. Disable this protection only after confirming it is the cause; turning it off reduces application-security protection, and Windows may require a reset or reinstall before it can be enabled again.
+
+### Which graphics driver is required for the v1.1 standalone app on 64GB PTL systems?
+
+Install [Intel® Arc™ Graphics - Windows](https://www.intel.com/content/www/us/en/download/785597/intel-arc-graphics-windows.html) version **32.0.101.8860 or later** for significantly better model-inference performance. See [Setup Instructions](#setup-instructions) for the full setup sequence.
+
+### Why must Intel VT-x virtualization be enabled for WSL?
+
+SuperClaw uses WSL, which requires CPU virtualization to be enabled in BIOS/UEFI. If installation fails, enable Intel Virtualization Technology, also called Intel VT-x, restart Windows, and run the installer again. On managed PCs, contact your IT administrator if the setting is locked or unavailable.
+
+### What should I do if installation fails after WSL is installed or stalls around 10%?
+
+- **WSL installed but Windows not restarted:** If WSL is installed during setup and Windows is not restarted, the SuperClaw installer may stop or have errors. Restart Windows, then run the installer again so the WSL components are fully available.
+- **Installation stalls around 10%:** If `wsl.exe` reports `Wsl/CallMsi/Install/REGDB_E_CLASSNOTREG` or says WSL is corrupted, open PowerShell as Administrator, run `wsl --install --no-distribution`, restart Windows, and run the installer again. If needed, run `wsl --update` as Administrator, restart, and try again.
+
+### How do I configure SuperClaw for corporate proxy or VPN environments?
+
+- **Proxy setup and network switching:** If your corporate network requires a proxy for downloads, configure the required HTTP proxy before installing SuperClaw. On an open network, no proxy setup is needed. If you switch between a corporate network and an outside network, quit SuperClaw, run `wsl.exe --unregister superclaw-docker`, and reopen the app so the backend is recreated with the current network settings.
+- **SuperClaw cannot reach the internet or your corporate proxy from within WSL2:** Add the following to `C:\Users\<username>\.wslconfig` (create the file if it does not exist):
   ```ini
   [wsl2]
   networkingMode=mirrored
   ```
   This makes WSL2 mirror your Windows network interfaces so that proxy and VPN routes are automatically inherited. After saving the file, run `wsl --shutdown` in PowerShell or Command Prompt to restart WSL2, then relaunch SuperClaw.
-- **Uninstall does not remove local user data.** Data may remain under `C:\Users\<user_id>\AppData\Local\SuperClaw`.
-- **Local MCP servers must use HTTP or SSE transport.** Stdio-based MCP servers are not supported in the current release.
+
+### Does uninstalling SuperClaw remove local user data?
+
+No. Data may remain under `C:\Users\<user_id>\AppData\Local\SuperClaw`.
+
+### Which transports do local MCP servers support?
+
+Local MCP servers must use **HTTP** or **SSE** transport. Stdio-based MCP servers are not supported in the current release. See [App Settings > MCP](#app-settings) for endpoint and networking details.
 
