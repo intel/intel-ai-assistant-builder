@@ -156,23 +156,46 @@ Deliver agent and scheduled-task results to your team's messaging tools. Slack i
 
 To configure Slack, go to [Slack API Apps](https://api.slack.com/apps), create a new app from scratch, and select your workspace. For a walkthrough, follow this [Slack app setup video](https://www.youtube.com/watch?v=eMN94wkwYME).
 
+Under **Basic Information > App-Level Tokens**, create an app-level token (`xapp`) with the `connections:write` scope. Copy this token; you will need it to connect SuperClaw. Turn on **Socket Mode** under **Settings > Socket Mode** so the app can receive events over Socket Mode.
+
+To let users send the bot direct messages, open **App Home**, turn on the **Home Tab**, and check **Allow users to send slash commands and messages from the messages tab**.
+
+Under **Features > Event Subscriptions**, turn on **Enable Events**. Under **Subscribe to bot events**, add the following events and save your changes:
+
+```text
+message.im
+message.mpim
+message.channels
+message.groups
+app_mention
+```
+
 In Slack, open **Features > OAuth & Permissions > Bot Token Scopes** and add these recommended bot token (`xoxb`) scopes for full support:
 
 ```text
 app_mentions:read
 channels:history
+channels:join
 channels:read
 chat:write
 chat:write.public
+commands
+files:read
+files:write
 groups:history
 groups:read
 im:history
 im:read
 im:write
+incoming-webhook
 mpim:history
 mpim:read
+reactions:read
+reactions:write
 users:read
 ```
+
+Click **Install to Workspace** (or **Reinstall to Workspace** if you changed scopes) to generate the bot token (`xoxb`).
 
 Minimal public-channel setup: `app_mentions:read`, `channels:read`, `chat:write`, and `users:read`. Add `channels:history` for channel context and [`chat:write.public`](https://docs.slack.dev/reference/scopes/chat:write.public) to send messages to public channels where your Slack app is not a member. After installation, copy the bot token and app token into **Advanced > Channel > Slack**, then mention the bot using your Slack app name (for example, `@YourAppName`) to start using it.
 
