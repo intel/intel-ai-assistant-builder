@@ -14,6 +14,7 @@ For more details, read Intel's article, [Solving the Agentic AI Trilemma: Cost, 
 
 <a name="toc"></a>
 - [Overview](#overview)
+- [Edge Server Model Serving](#edge-server-model-serving)
 - [Releases](#releases)
 - [Setup Instructions](#setup-instructions)
 - [App Settings](#app-settings)
@@ -64,6 +65,16 @@ To enable Auto Route, configure both a local model and at least one cloud model 
 
 ---
 
+## Edge Server Model Serving
+
+SuperClaw can connect to an enterprise edge server running `superclaw-ctl`, the command-line tool for setting up and managing the vLLM model-serving stack on an Intel GPU workstation. The desktop app connects to the running server with its URL and the full connection key generated during setup.
+
+- [Edge Server User Guide](./superclaw-ctl/USER-GUIDE.md) - Install, configure, start, and troubleshoot `superclaw-ctl`.
+- [Migration Guide](./superclaw-ctl/MIGRATION.md) - Notes to upgrade an existing installation to the latest version.
+- [Changelog](./superclaw-ctl/CHANGELOG.md) - `superclaw-ctl` release notes and compatibility changes.
+
+---
+
 ## Releases
 
 ### v1.1 (Current)
@@ -103,7 +114,7 @@ The following release will broaden support for PTL 32GB and Wildcat Lake (WCL) s
 
 3. **Install SuperClaw and restart Windows.** The SuperClaw backend runs in an isolated WSL environment. If WSL is not already available, the SuperClaw installer installs it. Restart Windows after WSL is installed, then continue or rerun the SuperClaw installer.
 
-4. **Edge Server setup.** If you want to connect to the edge inference server refer to the [User Guide](./superclaw-ctl/USER-GUIDE.md).
+4. **Edge Server setup.** If you want to connect to the edge inference server, refer to the [Edge Server Model Serving](#edge-server-model-serving) section.
 
 ---
 
@@ -240,7 +251,6 @@ SuperClaw uses WSL, which requires CPU virtualization to be enabled in BIOS/UEFI
   networkingMode=mirrored
   ```
   This makes WSL2 mirror your Windows network interfaces so that proxy and VPN routes are automatically inherited. After saving the file, run `wsl --shutdown` in PowerShell or Command Prompt to restart WSL2, then relaunch SuperClaw.
-
 ### Does uninstalling SuperClaw remove local user data?
 
 No. Data may remain under `C:\Users\<user_id>\AppData\Local\SuperClaw`.
@@ -248,4 +258,3 @@ No. Data may remain under `C:\Users\<user_id>\AppData\Local\SuperClaw`.
 ### Which transports do local MCP servers support?
 
 Local MCP servers must use **HTTP** or **SSE** transport. Stdio-based MCP servers are not supported in the current release. See [App Settings > MCP](#app-settings) for endpoint and networking details.
-

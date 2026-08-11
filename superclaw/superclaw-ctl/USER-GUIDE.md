@@ -28,10 +28,10 @@ If the server uses a proxy, configure `HTTP_PROXY`, `HTTPS_PROXY`, and `NO_PROXY
 
 ## Install `superclaw-ctl`
 
-Download the [superclaw-ctl](./binary_build/superclaw-ctl-v1.0.0-linux-x86-64.tar.gz) binary on the model-serving workstation, then install it:
+Download the [superclaw-ctl](./binary_build/superclaw-ctl-v1.2.0-linux-x86-64.tar.gz) binary on the model-serving workstation, then install it:
 
 ```bash
-tar -xzf superclaw-ctl.tar.gz
+tar -xzf superclaw-ctl-v1.2.0-linux-x86-64.tar.gz
 chmod +x superclaw-ctl
 sudo mv superclaw-ctl /usr/local/bin/
 ```
@@ -88,8 +88,8 @@ The first start can take several minutes while the models load. When startup suc
 
 ```text
 Connection
-URL: http://192.168.1.1:8080
-vLLM Model Router: 192.168.1.1:8080
+URL: http://<server-ip>:8080
+vLLM Model Router: <server-ip>:8080
 Token: <api-key>...
 ```
 
@@ -172,7 +172,7 @@ superclaw-ctl models download --verify
 
 ```bash
 superclaw-ctl models list
-superclaw-ctl models info Qwen3-Coder-Next
+superclaw-ctl models info Qwen--Qwen3-Coder-Next
 superclaw-ctl models download
 superclaw-ctl models download --model qwen3-coder-next
 superclaw-ctl models download --verify
