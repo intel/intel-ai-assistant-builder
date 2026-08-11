@@ -11,6 +11,13 @@ Run these commands on the workstation, not on the AI PC. The workstation runs th
 
 ---
 
+## Related Documentation
+
+- [Migration Guide](./MIGRATION.md) — Upgrade an existing `superclaw-ctl` installation.
+- [Changelog](./CHANGELOG.md) — Review release notes and compatibility changes.
+
+---
+
 ## Before You Start
 
 Make sure the model-serving workstation has:
