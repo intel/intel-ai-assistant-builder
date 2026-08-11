@@ -2,7 +2,7 @@
 
 This guide covers upgrading an existing `superclaw-ctl` installation to
 version 1.2.0. For a new installation, follow the setup steps in
-[README.md](README.md).
+[USER-GUIDE.md](USER-GUIDE.md).
 
 ## What changes in 1.2.0
 
