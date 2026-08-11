@@ -56,7 +56,7 @@ The full specialized-agent lineup is available only on the enterprise edge serve
 |----------|-------------|------------------|
 | Edge server (4× B70) | Qwen3-Coder-Next-80B | Default, Hybrid Coding, Deep Research, Email & Calendar |
 | PTL — RAM ≥ 64 GB, ≥ 6400 MT/s, iGPU B370 (10 Xe) or B390 (12 Xe) | Qwen3.6-35B | Default, Hybrid Coding, Deep Research, Email & Calendar |
-| PTL — RAM ≥ 32 GB, ≥ 6400 MT/s, iGPU B370 (10 Xe) or B390 (12 Xe) | Qwen3.5-4B | Enhanced Default Agent with full tools, permissions, and skills |
+| PTL — RAM ≥ 32 GB and < 64 GB, ≥ 6400 MT/s, iGPU B370 (10 Xe) or B390 (12 Xe) | Qwen3.5-4B | Enhanced Default Agent with full tools, permissions, and skills |
 
 > **Note:** PTL refers to Intel Panther Lake (Core Ultra Series 3).
 
@@ -85,7 +85,7 @@ A single [SuperClaw v1.2 Windows app](https://aibuilder.intel.com/installers/Sup
 
 - **Edge-connected:** Connect to an enterprise edge server for model serving [User Guide](./superclaw-ctl/USER-GUIDE.md).
 - **Standalone on PTL 64GB:** Run the model-serving workload and desktop app on a single PTL system with RAM ≥ 64 GB, ≥ 6400 MT/s, and a B370 (10 Xe) or B390 (12 Xe) iGPU, using the Qwen3.6-35B-A3B local model with full agent capabilities.
-- **Standalone on PTL 32GB (new):** Run standalone on a PTL system with RAM ≥ 32 GB, ≥ 6400 MT/s, and a B370 (10 Xe) or B390 (12 Xe) iGPU, using the Qwen3.5-4B local model with Default Agent.
+- **Standalone on PTL 32GB (new):** Run standalone on a PTL system with RAM ≥ 32 GB and < 64 GB, ≥ 6400 MT/s, and a B370 (10 Xe) or B390 (12 Xe) iGPU, using the Qwen3.5-4B local model with Default Agent.
 
 ### v1.1 (Past Release)
 
