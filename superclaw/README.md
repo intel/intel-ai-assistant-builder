@@ -42,13 +42,26 @@ SuperClaw ships with a team of purpose-built agents. Each can work independently
 | **Hybrid Coding Agent** | A coding specialist for reading, writing, editing, debugging, running scripts, and handling git operations through explore, edit, and test loops. |
 | **Deep Research Agent** | Runs multi-step research by delegating focused subtasks to web-search and file specialists, then synthesizes a cited answer. |
 | **Email & Calendar Agent** | Runs locally for security while listing, searching, summarizing, and prioritizing email; drafting replies; scheduling meetings; building daily plans; and tracking action items. |
-| **Local File Agent** | Extracts and answers questions from documents such as PDF, CSV, Markdown, DOCX, XLSX, and PPTX using local models for precision and privacy. |
+| **Local File Agent** | Extracts and answers questions from documents such as PDF, CSV, Markdown, DOCX, XLSX, and PPTX using local models for precision and privacy. Includes a built-in OCR tool for extracting text from images. |
 | **Web Search Agent** | Returns focused, factual answers with source citations for current information from the web. |
 | **File Protection (Experimental)** | An optional, off-by-default feature that detects and masks sensitive information before cloud processing. |
 
 For example, with experimental File Protection enabled, a customer-records spreadsheet can move through a coordinated pipeline that prepares the data, attempts to detect and mask personal information, performs the analysis, and limits the context sent to the cloud.
 
+#### Agent availability by hardware
+
+The full specialized-agent lineup is available only on the enterprise edge server and higher-memory AI PCs. More constrained systems run an enhanced Default Agent with full tools, permissions, and skills instead of the complete set of specialized agents.
+
+| Hardware | Local model | Available agents |
+|----------|-------------|------------------|
+| Edge server (4× B70) | Qwen3-Coder-Next-80B | Default, Hybrid Coding, Deep Research, Email & Calendar |
+| PTL — RAM ≥ 64 GB, ≥ 6400 MT/s, iGPU B370 (10 Xe) or B390 (12 Xe) | Qwen3.6-35B | Default, Hybrid Coding, Deep Research, Email & Calendar |
+| PTL — RAM ≥ 32 GB and < 64 GB, ≥ 6400 MT/s, iGPU B370 (10 Xe) or B390 (12 Xe) | Qwen3.5-4B | Enhanced Default Agent with full tools, permissions, and skills |
+
+> **Note:** PTL refers to Intel Panther Lake (Core Ultra Series 3).
+
 ---
+
 
 ### Auto Route
 
@@ -66,44 +79,52 @@ To enable Auto Route, configure both a local model and at least one cloud model 
 
 ## Releases
 
-### v1.1 (Current)
+### v1.2 (Current)
 
-SuperClaw v1.1 supports two deployment modes:
+A single [SuperClaw v1.2 Windows app](https://aibuilder.intel.com/installers/SuperClaw-Setup-1.2.0.811.exe) provides three deployment options. The app detects your hardware at setup and configures the right solution automatically:
 
-- **Standalone Windows app:** One PTL system with at least 64GB of RAM running at 8,000 MT/s or faster and a B370 (10 Xe) or B390 (12 Xe) iGPU runs both the model-serving workload and the [SuperClaw v1.1 desktop app](https://aibuilder.intel.com/installers/SuperClaw-Setup-1.1.0.731.exe).
-- **Edge-connected:** The PTL system can connect to an enterprise edge server for model serving.
+- **Edge-connected:** Connect to an enterprise edge server for model serving [User Guide](./superclaw-ctl/USER-GUIDE.md).
+- **Standalone on PTL 64GB:** Run the model-serving workload and desktop app on a single PTL system with RAM ≥ 64 GB, ≥ 6400 MT/s, and a B370 (10 Xe) or B390 (12 Xe) iGPU, using the Qwen3.6-35B-A3B local model with full agent capabilities.
+- **Standalone on PTL 32GB (new):** Run standalone on a PTL system with RAM ≥ 32 GB and < 64 GB, ≥ 6400 MT/s, and a B370 (10 Xe) or B390 (12 Xe) iGPU, using the Qwen3.5-4B local model with Default Agent.
+
+### v1.1 (Past Release)
+
+A single SuperClaw Windows app provides two deployment options. The app detects your hardware at setup and configures the right solution automatically:
+
+- **Edge-connected:** Connect to an enterprise edge server for model serving [User Guide](./superclaw-ctl/USER-GUIDE.md).
+- **Standalone on PTL 64GB:** Run both the model-serving workload and the [SuperClaw v1.1 Windows app](https://aibuilder.intel.com/installers/SuperClaw-Setup-1.1.0.731.exe) on a single PTL system with at least 64GB of RAM running at 8,000 MT/s or faster and a B370 (10 Xe) or B390 (12 Xe) iGPU.
 
 ### v1.0 (Past Release)
 
-SuperClaw v1.0 requires a two-system configuration:
+SuperClaw v1.0 supports only edge-connected deployment and requires a two-system configuration:
 
-- **An AI PC companion device**, such as a Wildcat Lake system with 16GB of memory, runs the [SuperClaw v1.0 desktop app](https://aibuilder.intel.com/installers/SuperClaw-Setup-1.0.0.623.exe).
+- **An AI PC companion device**, such as a Wildcat Lake system with 16GB of memory, runs the [SuperClaw v1.0 Windows app](https://aibuilder.intel.com/installers/SuperClaw-Setup-1.0.0.623.exe).
 - **An enterprise edge server**, configured as a model-serving workstation with four B70 cards, runs Qwen3-Coder-Next-80B.
 
 Users interact with SuperClaw on the AI PC while the model workload runs on the edge server.
 
 ### Following Release (Planned)
 
-The following release will broaden support for PTL 32GB and Wildcat Lake (WCL) systems.
+The following release will broaden support for other Intel hardware.
 
 ---
 
 ## Setup Instructions
 
-1. **Update the graphics driver on 64GB PTL systems.** Install [Intel® Arc™ Graphics - Windows](https://www.intel.com/content/www/us/en/download/785597/intel-arc-graphics-windows.html) version **32.0.101.8860 or later** for significantly better model-inference performance.
+1. **Update the graphics driver on PTL systems.** Install [Intel® Arc™ Graphics - Windows](https://www.intel.com/content/www/us/en/download/785597/intel-arc-graphics-windows.html) version **32.0.101.8860 or later** for significantly better model-inference performance.
 
 2. **Configure your network.** If your corporate network requires a proxy for downloads, such as fetching models from Hugging Face, configure it before installing SuperClaw.
 
     If SuperClaw cannot access the internet or your corporate proxy from WSL2, add the following to `C:\Users\<username>\.wslconfig` (create the file if necessary):
 
-        ```ini
-        [wsl2]
-        networkingMode=mirrored
-        ```
+    ```ini
+    [wsl2]
+    networkingMode=mirrored
+    ```
 
 3. **Install SuperClaw and restart Windows.** The SuperClaw backend runs in an isolated WSL environment. If WSL is not already available, the SuperClaw installer installs it. Restart Windows after WSL is installed, then continue or rerun the SuperClaw installer.
 
-4. **Edge Server setup.** If you want to connect to the edge inference server refer to the [User Guide](./superclaw-ctl/USER-GUIDE.md).
+4. **Connect to an edge server (optional).** For edge server installation, configuration, and connection instructions, see the [`superclaw-ctl` Edge Server User Guide](./superclaw-ctl/USER-GUIDE.md).
 
 ---
 
@@ -113,7 +134,7 @@ The **Advanced** area is where enterprises and users tailor SuperClaw to their h
 
 #### Model Routing
 
-Configure local and cloud models, connect cloud providers using API keys or OAuth, and choose which models Auto Route can use. SuperClaw v1.1 supports a wider range of cloud models than v1.0 and lets users tune the Auto Route parameter to balance response quality against cost and privacy.
+Configure local and cloud models, connect cloud providers using API keys or OAuth, and choose which models Auto Route can use. On PTL 32GB or PTL 64GB systems, you can configure a local model served with llama.cpp; alternatively, connect to an edge server for model serving. SuperClaw adds broader model support with each release and lets users tune the Auto Route parameter to balance response quality against cost and privacy.
 
 #### Configuration
 
@@ -148,7 +169,7 @@ For local MCP servers:
 
 For a GitHub MCP server, add `http://localhost:19876/mcp/oauth/callback` as the OAuth callback URL. This allows the OAuth flow in the Windows browser to return the response to the SuperClaw backend running in WSL.
 
-> 💡 **Tip:** Disable or remove MCP servers you are not using. Their tools consume significant context and may introduce irrelevant options that reduce agent accuracy.
+> ⚠️ **Important:** **Disable or remove MCP servers you are not using.** Their tools consume significant context and may introduce irrelevant options that reduce agent accuracy.
 
 #### Channel
 
@@ -156,7 +177,7 @@ Deliver agent and scheduled-task results to your team's messaging tools. Slack i
 
 To configure Slack, go to [Slack API Apps](https://api.slack.com/apps), create a new app from scratch, and select your workspace. For a walkthrough, follow this [Slack app setup video](https://www.youtube.com/watch?v=eMN94wkwYME).
 
-Under **Basic Information > App-Level Tokens**, create an app-level token (`xapp`) with the `connections:write` scope. Copy this token; you will need it to connect SuperClaw. Turn on **Socket Mode** under **Settings > Socket Mode** so the app can receive events over Socket Mode.
+Under **Basic Information > App-Level Tokens**, create an app-level token (`xapp`) with the `connections:write` scope. Copy this token; you will need it to connect SuperClaw. Turn on **Socket Mode** under **Settings > Socket Mode** so the app can receive events.
 
 To let users send the bot direct messages, open **App Home**, turn on the **Home Tab**, and check **Allow users to send slash commands and messages from the messages tab**.
 
@@ -201,11 +222,10 @@ Minimal public-channel setup: `app_mentions:read`, `channels:read`, `chat:write`
 
 #### Agent
 
-Create a custom agent by uploading a `.md` configuration file or entering the configuration directly. You can add installed skills, connected MCP servers, and the following built-in tool groups to your agent. Built-in tool groups are disabled until you select them:
+Create a custom agent by uploading a `.md` configuration file or entering the configuration directly. You can add installed skills and the following built-in tool groups to your agent. Built-in tool groups are disabled until you select them:
 
 - **File & Code Engine:** Navigate source files, edit code, and control command execution.
-- **Document & Table Intelligence:** Extract structured data and perform deterministic analysis on PDFs, Office documents, and tables.
-- **Email & Calendar Operations:** Analyze inboxes, manage response workflows, and perform scheduling actions.
+- **Email & Calendar Operations:** Analyze inboxes, manage response workflows, and perform scheduling actions. (Available only on systems with full agent capabilities.)
 - **Web & Research Retrieval:** Find evidence on the web and retrieve information for trend-oriented research.
 
 > 💡 **Tip:** To use a custom agent, mention it with `@` in the prompt window or select it from the agent dropdown menu.
@@ -218,13 +238,15 @@ Create a custom agent by uploading a `.md` configuration file or entering the co
 
 If Windows Security reports that it blocked a SuperClaw component, open **Windows Security > App & browser control > Smart App Control settings** and turn Smart App Control off, then relaunch SuperClaw. Disable this protection only after confirming it is the cause; turning it off reduces application-security protection, and Windows may require a reset or reinstall before it can be enabled again.
 
-### Which graphics driver is required for the v1.1 standalone app on 64GB PTL systems?
+### Which graphics driver do I need to run models locally on PTL systems?
 
-Install [Intel® Arc™ Graphics - Windows](https://www.intel.com/content/www/us/en/download/785597/intel-arc-graphics-windows.html) version **32.0.101.8860 or later** for significantly better model-inference performance. See [Setup Instructions](#setup-instructions) for the full setup sequence.
+To run a local model on a PTL system, install [Intel® Arc™ Graphics - Windows](https://www.intel.com/content/www/us/en/download/785597/intel-arc-graphics-windows.html) version **32.0.101.8860 or later** for significantly better model-inference performance. See [Setup Instructions](#setup-instructions) for the full setup sequence.
 
 ### Why must Intel VT-x virtualization be enabled for WSL?
 
 SuperClaw uses WSL, which requires CPU virtualization to be enabled in BIOS/UEFI. If installation fails, enable Intel Virtualization Technology, also called Intel VT-x, restart Windows, and run the installer again. On managed PCs, contact your IT administrator if the setting is locked or unavailable.
+
+Note that immediately after WSL is installed, the installer may falsely report that virtualization is not enabled even when it is. Restart the system after WSL installation, then run the installer again; this usually clears the false warning.
 
 ### What should I do if installation fails after WSL is installed or stalls around 10%?
 
@@ -248,4 +270,3 @@ No. Data may remain under `C:\Users\<user_id>\AppData\Local\SuperClaw`.
 ### Which transports do local MCP servers support?
 
 Local MCP servers must use **HTTP** or **SSE** transport. Stdio-based MCP servers are not supported in the current release. See [App Settings > MCP](#app-settings) for endpoint and networking details.
-
