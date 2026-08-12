@@ -81,7 +81,7 @@ To enable Auto Route, configure both a local model and at least one cloud model 
 
 ### v1.2 (Current)
 
-A single [SuperClaw v1.2 Windows app](https://aibuilder.intel.com/installers/SuperClaw-Setup-1.2.0.811.exe) provides three deployment options. The app detects your hardware at setup and configures the right solution automatically:
+A single [SuperClaw v1.2 Windows app](https://aibuilder.intel.com/installers/SuperClaw-Setup-1.2.0.813.exe) provides three deployment options. The app detects your hardware at setup and configures the right solution automatically:
 
 - **Edge-connected:** Connect to an enterprise edge server for model serving [User Guide](./superclaw-ctl/USER-GUIDE.md).
 - **Standalone on PTL 64GB:** Run the model-serving workload and desktop app on a single PTL system with RAM ≥ 64 GB, ≥ 6400 MT/s, and a B370 (10 Xe) or B390 (12 Xe) iGPU, using the Qwen3.6-35B-A3B local model with full agent capabilities.
