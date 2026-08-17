@@ -130,11 +130,15 @@ The following release will broaden support for other Intel hardware.
 
 ## App Settings
 
-The **Advanced** area is where enterprises and users tailor SuperClaw to their hardware, providers, and workflows. It is organized into seven sections:
+The **Advanced** area is where enterprises and users tailor SuperClaw to their hardware, providers, and workflows. It is organized into eight sections:
 
 #### Model Routing
 
 Configure local and cloud models, connect cloud providers using API keys or OAuth, and choose which models Auto Route can use. On PTL 32GB or PTL 64GB systems, you can configure a local model served with llama.cpp; alternatively, connect to an edge server for model serving. SuperClaw adds broader model support with each release and lets users tune the Auto Route parameter to balance response quality against cost and privacy.
+
+#### Workspace
+
+SuperClaw uses `%USERPROFILE%\SuperClawProjects` as its workspace. Move or copy files into this folder to make them accessible to SuperClaw.
 
 #### Configuration
 
