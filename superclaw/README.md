@@ -138,7 +138,7 @@ Configure local and cloud models, connect cloud providers using API keys or OAut
 
 #### Workspace
 
-SuperClaw uses `%USERPROFILE%\SuperClawProjects` as its workspace. Move or copy files into this folder to make them accessible to SuperClaw.
+SuperClaw uses `%USERPROFILE%\SuperClawProjects` as its workspace. Place your files here for SuperClaw to access them, and generated results will also be saved here.
 
 #### Configuration
 
