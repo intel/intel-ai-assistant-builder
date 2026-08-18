@@ -130,7 +130,7 @@ The following release will broaden support for other Intel hardware.
 
 ## App Settings
 
-The **Advanced** area is where enterprises and users tailor SuperClaw to their hardware, providers, and workflows. It is organized into seven sections:
+The **Advanced** area is where enterprises and users tailor SuperClaw to their hardware, providers, and workflows.
 
 #### Model Routing
 
@@ -262,6 +262,10 @@ Note that immediately after WSL is installed, the installer may falsely report t
   networkingMode=mirrored
   ```
   This makes WSL2 mirror your Windows network interfaces so that proxy and VPN routes are automatically inherited. After saving the file, run `wsl --shutdown` in PowerShell or Command Prompt to restart WSL2, then relaunch SuperClaw.
+
+### Where does SuperClaw store my files?
+
+SuperClaw uses `%USERPROFILE%\SuperClawProjects` as its workspace, where `%USERPROFILE%` is normally `C:\Users\<your_user_id>`. Place your files here for SuperClaw to access them, and generated results will also be saved here. Files you upload in the SuperClaw app are also saved to this folder.
 
 ### Does uninstalling SuperClaw remove local user data?
 
