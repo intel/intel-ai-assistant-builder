@@ -130,15 +130,11 @@ The following release will broaden support for other Intel hardware.
 
 ## App Settings
 
-The **Advanced** area is where enterprises and users tailor SuperClaw to their hardware, providers, and workflows. It is organized into eight sections:
+The **Advanced** area is where enterprises and users tailor SuperClaw to their hardware, providers, and workflows.
 
 #### Model Routing
 
 Configure local and cloud models, connect cloud providers using API keys or OAuth, and choose which models Auto Route can use. On PTL 32GB or PTL 64GB systems, you can configure a local model served with llama.cpp; alternatively, connect to an edge server for model serving. SuperClaw adds broader model support with each release and lets users tune the Auto Route parameter to balance response quality against cost and privacy.
-
-#### Workspace
-
-SuperClaw uses `%USERPROFILE%\SuperClawProjects` as its workspace. Place your files here for SuperClaw to access them, and generated results will also be saved here.
 
 #### Configuration
 
@@ -266,6 +262,10 @@ Note that immediately after WSL is installed, the installer may falsely report t
   networkingMode=mirrored
   ```
   This makes WSL2 mirror your Windows network interfaces so that proxy and VPN routes are automatically inherited. After saving the file, run `wsl --shutdown` in PowerShell or Command Prompt to restart WSL2, then relaunch SuperClaw.
+
+### Where does SuperClaw store my files?
+
+SuperClaw uses `%USERPROFILE%\SuperClawProjects` as its workspace, where `%USERPROFILE%` is normally `C:\Users\<your_user_id>`. Place your files here for SuperClaw to access them, and generated results will also be saved here. Files you upload in the SuperClaw app are also saved to this folder.
 
 ### Does uninstalling SuperClaw remove local user data?
 
