@@ -274,16 +274,17 @@ Local MCP servers must use **HTTP** or **SSE** transport. Stdio-based MCP server
 
 ### Which cloud models should I choose?
 
-SuperClaw works with any OpenAI-compatible cloud provider you configure in
-**Settings > Model Routing**. For the best experience, choose a standard
+SuperClaw works with any OpenAI-compatible cloud provider you configure under
+**Advanced > Model Routing**. For the best experience, pick a standard
 chat/instruct model rather than a reasoning model.
 
-Reasoning models — sometimes labeled thinking, extended thinking, or chain-of-thought
-models — generate a large amount of internal deliberation before producing an answer.
-That extra work increases both response time and token cost, and multi-step workflows
-such as the Deep Research Agent may not complete. If a long-running task consistently
-fails to produce a result, switching to a non-reasoning model is the first thing to try.
+Reasoning models (also called thinking, extended thinking, or chain-of-thought
+models) "think out loud" internally before giving you an answer. This makes
+them slower and more expensive to run, and it can cause multi-step workflows
+like the Deep Research Agent to time out without finishing. If a long-running
+task keeps failing to complete, try switching to a non-reasoning model first.
 
-Whether a model reasons is determined by the model provider, so SuperClaw cannot turn
-it off on your behalf. Provider options that only hide the reasoning from the response
-do not reduce the time or cost it consumes.
+SuperClaw can't turn off a model's reasoning for you — that's controlled by the
+model provider. Some providers let you hide the reasoning text from the
+response, but that only hides the output; it doesn't make the model faster or
+cheaper to run.
