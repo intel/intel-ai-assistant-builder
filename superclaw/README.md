@@ -270,3 +270,21 @@ No. Data may remain under `C:\Users\<user_id>\AppData\Local\SuperClaw`.
 ### Which transports do local MCP servers support?
 
 Local MCP servers must use **HTTP** or **SSE** transport. Stdio-based MCP servers are not supported in the current release. See [App Settings > MCP](#app-settings) for endpoint and networking details.
+
+
+### Which cloud models should I choose?
+
+SuperClaw works with any OpenAI-compatible cloud provider you configure under
+**Advanced > Model Routing**. For the best experience, pick a standard
+chat/instruct model rather than a reasoning model.
+
+Reasoning models (also called thinking, extended thinking, or chain-of-thought
+models) "think out loud" internally before giving you an answer. This makes
+them slower and more expensive to run, and it can cause multi-step workflows
+like the Deep Research Agent to time out without finishing. If a long-running
+task keeps failing to complete, try switching to a non-reasoning model first.
+
+SuperClaw can't turn off a model's reasoning for you — that's controlled by the
+model provider. Some providers let you hide the reasoning text from the
+response, but that only hides the output; it doesn't make the model faster or
+cheaper to run.
